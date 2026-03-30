@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import CountUp from "@/components/ui/CountUp";
 
@@ -13,13 +13,6 @@ const stats = [
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
-
-  const toggleVideo = () => {
-    if (!videoRef.current) return;
-    playing ? videoRef.current.pause() : videoRef.current.play();
-    setPlaying(!playing);
-  };
 
   return (
     <section
