@@ -178,15 +178,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Video play/pause toggle */}
-      <button
-        onClick={toggleVideo}
-        className="absolute bottom-20 right-16 z-10 w-11 h-11 border border-white/15 rounded-full bg-white/5 backdrop-blur-md text-white/55 text-sm flex items-center justify-center hover:border-gold hover:bg-[rgba(184,151,90,0.12)] hover:text-gold-lt transition-all duration-200 max-md:right-6"
-        style={{ animation: "fadeIn 1s ease 1.2s both" }}
-        aria-label={playing ? "Pause video" : "Play video"}
-      >
-        {playing ? "⏸" : "▶"}
-      </button>
+      {/* Video play/pause toggle — hidden */}
 
       {/* Scroll indicator */}
       <div
