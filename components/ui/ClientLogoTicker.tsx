@@ -25,7 +25,7 @@ const SixteenNineLogo = () => (
   </span>
 );
 
-const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boolean; invert?: boolean }[] = [
+const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boolean; invert?: boolean; large?: boolean }[] = [
   { name: "RenewRx",    url: "https://cdn.prod.website-files.com/677eb93874391ef718526bb9/6900554b1cf1f6b0feed728e_renewrx-r-logo.svg" },
   { name: "Databahn",   url: "https://cdn.prod.website-files.com/67eb571d0fe797071c2c2759/67ebaa6ba00e7b767d1db02e_logo.avif", invert: true },
   { name: "Redline Lab",url: "https://www.redlinelab.io/assets/REDLINELAB-logo-600-100-D8pVPWFE.png" },
@@ -34,6 +34,7 @@ const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boole
   { name: "Ainstinct",  svg: <AinstinctLogo /> },
   { name: "LexGo Solutions", svg: <LexGoLogo /> },
   { name: "Chicago Indian Arts", url: "https://res.cloudinary.com/dom3oj7ya/image/upload/v1770979601/CIA-logo-black_snmlaz.webp" },
+  { name: "PhoneCheck", url: "/logos/phonecheck.webp", large: true },
 ];
 
 export default function ClientLogoTicker() {
@@ -78,7 +79,7 @@ export default function ClientLogoTicker() {
                     <img
                       src={client.url}
                       alt={client.name}
-                      className="max-h-[42px] max-w-[150px] object-contain"
+                      className={`${client.large ? "max-h-[70px] max-w-[180px]" : "max-h-[42px] max-w-[150px]"} object-contain`}
                       style={client.invert ? { filter: "brightness(0)" } : undefined}
                       onError={(e) => {
                         const el = e.currentTarget as HTMLImageElement;
