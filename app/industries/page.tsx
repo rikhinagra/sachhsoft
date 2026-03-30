@@ -11,6 +11,7 @@ import {
   Layers,
   CheckCircle2,
 } from "lucide-react";
+import ClientLogoTicker from "@/components/ui/ClientLogoTicker";
 
 export const metadata: Metadata = {
   title: "Industries — Deep Domain Expertise",
@@ -251,6 +252,9 @@ export default function IndustriesPage() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* ── Client Logo Ticker ── */}
+      <ClientLogoTicker />
 
       {/* ── Industry Deep-Dives ── */}
       {industries.map((ind) => {
