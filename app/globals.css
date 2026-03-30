@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── TAILWIND v4 THEME ─── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink:       #18160f;
+  --color-gold:      #b8975a;
+  --color-gold-lt:   #d4b47e;
+  --color-off:       #f8f7f5;
+  --color-smoke:     #f0eeea;
+  --color-rule:      #e2dfd8;
+  --color-muted:     #9b9690;
+  --color-body-text: #4a4740;
+
+  --font-sans:  var(--font-outfit), "Outfit", ui-sans-serif, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant", ui-serif, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── CSS CUSTOM PROPERTIES ─── */
+:root {
+  --white:   #ffffff;
+  --off:     #f8f7f5;
+  --rule:    #e2dfd8;
+  --rule-dk: rgba(255, 255, 255, 0.10);
+  --muted:   #9b9690;
+  --body-c:  #4a4740;
+  --ink:     #18160f;
+  --gold:    #b8975a;
+  --gold-lt: #d4b47e;
+  --gold-bg: rgba(184, 151, 90, 0.08);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hide default cursor on desktop — replaced by custom cursor */
+@media (pointer: fine) {
+  body, a, button { cursor: none; }
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── KEYFRAME ANIMATIONS ─── */
+@keyframes grain {
+  0%   { background-position: 0 0; }
+  25%  { background-position: 40px 20px; }
+  50%  { background-position: -20px 40px; }
+  75%  { background-position: 60px -10px; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes scrollDrop {
+  from { top: -100%; }
+  to   { top: 200%; }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
