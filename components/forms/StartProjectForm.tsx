@@ -154,7 +154,7 @@ export default function StartProjectForm() {
       <div className="grid min-h-screen max-md:grid-cols-1 max-md:block" style={{ gridTemplateColumns: "420px 1fr" }}>
         {/* ── LEFT PANEL (sticky dark) ── */}
         <aside
-          className="bg-ink px-[52px] py-[120px] sticky top-0 h-screen overflow-y-auto flex flex-col justify-between max-md:static max-md:h-auto max-md:px-8 max-md:py-20"
+          className="bg-ink px-[52px] pt-[140px] pb-[120px] sticky top-0 h-screen overflow-y-auto flex flex-col justify-between max-md:static max-md:h-auto max-md:px-8 max-md:pt-[108px] max-md:pb-16"
         >
           <div>
             <div className="text-[10px] font-medium tracking-[0.22em] uppercase text-gold mb-7 flex items-center gap-2.5">
