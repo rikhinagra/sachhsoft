@@ -69,7 +69,7 @@ export default function Footer() {
             © {year} SACHHSOFT. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-[11px] font-light tracking-[0.12em] uppercase text-white/20">
-            <Link href="/privacy-policy" className="no-underline hover:text-white/50 transition-colors">
+            <Link href="/privacy" className="no-underline hover:text-white/50 transition-colors">
               Privacy
             </Link>
             <Link href="/terms" className="no-underline hover:text-white/50 transition-colors">
