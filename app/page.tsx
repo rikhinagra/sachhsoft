@@ -7,6 +7,7 @@ import ProcessSection from "@/components/home/ProcessSection";
 import ReachSection from "@/components/home/ReachSection";
 import TestimonialSection from "@/components/home/TestimonialSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
+import ClientLogoTicker from "@/components/ui/ClientLogoTicker";
 import CTASection from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <ReachSection />
       <TestimonialSection />
       <IndustriesSection />
+      <ClientLogoTicker />
       <CTASection />
     </main>
   );
