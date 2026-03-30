@@ -12,7 +12,7 @@ import CTASection from "@/components/home/CTASection";
 export const metadata: Metadata = {
   title: "SACHHSOFT — Bespoke Software Development | Chicago & Global",
   description:
-    "SACHHSOFT builds custom software products for enterprise teams, mid-size companies, and startup founders. HealthTech, FinTech, E-Commerce, AI integration — from Chicago, delivered globally. 50+ companies launched. 1M+ users maintained.",
+    "SACHHSOFT builds custom software products for enterprise teams, mid-size companies, and startup founders. HealthTech, FinTech, E-Commerce, AI integration — from Chicago, delivered globally. 15+ companies launched. 1M+ users maintained.",
   alternates: { canonical: "https://sachhsoft.com" },
 };
 

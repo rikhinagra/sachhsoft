@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react"; // restore when map video is uncommented
 import RevealWrapper from "@/components/ui/RevealWrapper";
 import { StaggerContainer, StaggerItem } from "@/components/ui/StaggerContainer";
 import CountUp from "@/components/ui/CountUp";
@@ -24,29 +24,8 @@ const stats = [
 ];
 
 export default function ReachSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.currentTime = 0;
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+  // const videoRef = useRef<HTMLVideoElement>(null); // restore when map video is uncommented
+  // useEffect(() => { ... }, []); // restore when map video is uncommented
 
   return (
     <section className="bg-ink overflow-hidden" aria-labelledby="reach-heading">
@@ -87,7 +66,7 @@ export default function ReachSection() {
         </StaggerContainer>
       </div>
 
-      {/* World Map Video — full bleed */}
+      {/* World Map Video — TEMPORARILY COMMENTED OUT — restore when ready
       <video
         ref={videoRef}
         muted
@@ -107,6 +86,7 @@ export default function ReachSection() {
           type="video/mp4"
         />
       </video>
+      END WORLD MAP VIDEO */}
     </section>
   );
 }

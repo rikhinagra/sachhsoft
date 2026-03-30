@@ -42,7 +42,7 @@ const team = [
 ];
 
 const stats = [
-  { num: "50+", label: "Companies Launched" },
+  { num: "15+", label: "Companies Launched" },
   { num: "12+", label: "Countries Served" },
   { num: "60+", label: "Expert Engineers" },
   { num: "2.5yr", label: "Avg. Engagement" },
@@ -197,13 +197,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="bg-ink py-[80px] px-16 border-t border-white/10 max-lg:px-8 max-md:px-6 max-md:py-14">
-        <StaggerContainer className="max-w-[1280px] mx-auto grid grid-cols-4 gap-px bg-white/8 border border-white/8 max-md:grid-cols-2">
+      <section className="bg-off py-[80px] px-16 border-t border-rule max-lg:px-8 max-md:px-6 max-md:py-14">
+        <StaggerContainer className="max-w-[1280px] mx-auto grid grid-cols-4 gap-px bg-rule border border-rule max-md:grid-cols-2">
           {stats.map((s) => (
-            <StaggerItem key={s.label} className="bg-ink text-center py-12 px-6 max-md:py-10">
+            <StaggerItem key={s.label} className="bg-white text-center py-12 px-6 max-md:py-10">
               <CountUp
                 value={s.num}
-                className="font-serif font-light text-white leading-none tracking-[-0.04em] mb-2 block"
+                className="font-serif font-light text-ink leading-none tracking-[-0.04em] mb-2 block"
                 style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
               />
               <div className="text-[11px] font-medium tracking-[0.14em] uppercase text-gold">
@@ -214,7 +214,7 @@ export default function AboutPage() {
         </StaggerContainer>
       </section>
 
-      {/* ── Team ── */}
+      {/* ── Team ── TEMPORARILY COMMENTED OUT — restore when ready ──
       <section className="bg-white py-[120px] px-16 border-t border-rule max-lg:px-8 max-md:px-6 max-md:py-16">
         <div className="max-w-[1280px] mx-auto">
           <RevealWrapper className="mb-14 max-md:mb-10">
@@ -238,7 +238,6 @@ export default function AboutPage() {
                   key={member.name}
                   className="group flex flex-col"
                 >
-                  {/* Portrait */}
                   <div className="relative overflow-hidden aspect-[3/4] bg-ink mb-6">
                     {member.photo ? (
                       <img
@@ -253,11 +252,8 @@ export default function AboutPage() {
                         </span>
                       </div>
                     )}
-                    {/* Hover gold bottom bar */}
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   </div>
-
-                  {/* Info */}
                   <div className="w-8 h-px bg-gold mb-4" />
                   <div
                     className="font-serif font-normal text-ink tracking-[-0.01em] leading-tight mb-1.5"
@@ -273,8 +269,9 @@ export default function AboutPage() {
           </StaggerContainer>
         </div>
       </section>
+      ── END TEAM SECTION ── */}
 
-      {/* ── Manifesto ── */}
+      {/* ── Manifesto ── TEMPORARILY COMMENTED OUT — restore when ready ──
       <section className="bg-off py-[120px] px-16 border-t border-rule max-lg:px-8 max-md:px-6 max-md:py-16">
         <RevealWrapper className="max-w-[800px] mx-auto text-center">
           <span
@@ -297,6 +294,7 @@ export default function AboutPage() {
           </div>
         </RevealWrapper>
       </section>
+      ── END MANIFESTO SECTION ── */}
 
       {/* ── CTA ── */}
       <section className="bg-ink py-[100px] px-16 border-t border-white/10 max-lg:px-8 max-md:px-6 max-md:py-16">

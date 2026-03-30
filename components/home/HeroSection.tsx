@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import CountUp from "@/components/ui/CountUp";
 
 const stats = [
-  { num: "50", sup: "+", label: "Companies Launched" },
+  { num: "15", sup: "+", label: "Companies Launched" },
   { num: "40", sup: "%", label: "Faster to Market" },
   { num: "1M", sup: "+", label: "Users Maintained" },
   { num: "60", sup: "", label: "Expert Engineers" },
@@ -166,7 +167,7 @@ export default function HeroSection() {
               className="py-5 border-b border-white/10 first:border-t first:border-white/10 max-lg:border-b-0 max-lg:border-t-0 max-lg:border-r max-lg:border-white/10 max-lg:last:border-r-0 max-lg:px-5 max-lg:py-4 max-md:border-r-0 max-md:border-b max-md:border-white/10 max-md:px-0 max-md:py-4"
             >
               <div className="font-serif font-semibold leading-none tracking-[-0.02em] text-white text-[42px] max-md:text-[36px]">
-                {s.num}
+                <CountUp value={s.num} />
                 <span className="text-gold-lt">{s.sup}</span>
               </div>
               <div className="text-[10px] font-normal tracking-[0.14em] uppercase text-white/30 mt-1">
