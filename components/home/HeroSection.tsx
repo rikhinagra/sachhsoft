@@ -16,8 +16,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden flex items-end"
-      style={{ height: "100svh", minHeight: "700px" }}
+      className="relative w-full overflow-hidden flex items-end max-md:items-start h-[100svh] min-h-[700px] max-md:h-auto max-md:min-h-[100svh]"
     >
       {/* ── Video background ── */}
       <div className="absolute inset-0 z-0">
@@ -81,7 +80,7 @@ export default function HeroSection() {
       />
 
       {/* ── Hero content ── */}
-      <div className="relative z-10 w-full px-16 pb-20 grid grid-cols-[1fr_auto] items-end gap-16 max-lg:grid-cols-1 max-lg:px-8 max-md:px-6 max-md:pb-14 max-md:gap-6">
+      <div className="relative z-10 w-full px-16 pb-20 grid grid-cols-[1fr_auto] items-end gap-16 max-lg:grid-cols-1 max-lg:px-8 max-md:px-6 max-md:pb-14 max-md:gap-6 max-md:pt-[88px]">
         {/* Left — headline + descriptor + CTA */}
         <div>
           {/* Kicker */}

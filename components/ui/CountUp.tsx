@@ -24,7 +24,7 @@ function parseValue(raw: string): { num: number; prefix: string; suffix: string;
 
 export default function CountUp({ value, className = "", style }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   const [display, setDisplay] = useState("0");
   const { num, prefix, suffix, isFloat } = parseValue(value);
 
