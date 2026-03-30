@@ -116,7 +116,7 @@ export default function HeroSection() {
                 What We Do
               </div>
               <p className="text-[14px] font-light text-white/65 leading-relaxed max-w-[240px]">
-                Custom digital products — from MVP to enterprise scale — built for your domain, your users, and your growth.
+                Custom digital products, from MVP to enterprise scale, built for your domain, your users, and your growth.
               </p>
             </div>
             <div>

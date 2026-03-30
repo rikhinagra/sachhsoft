@@ -23,7 +23,7 @@ export default function TestimonialSection() {
               className="font-serif text-ink font-light italic leading-[1.5] tracking-[-0.01em]"
               style={{ fontSize: "clamp(22px, 2.5vw, 30px)" }}
             >
-              Sachhsoft didn&apos;t just build our product — they brought
+              Sachhsoft didn&apos;t just build our product. They brought
               strategic clarity to every decision. We launched in 14 weeks,
               under budget, and the platform scaled to 50k users in the first
               month.
@@ -58,8 +58,8 @@ export default function TestimonialSection() {
               </h3>
               <p className="text-[14px] font-light text-body-text leading-[1.7] mb-9">
                 We designed and engineered a HIPAA-compliant telehealth platform
-                from scratch — architecture, mobile apps, and backend
-                infrastructure — delivered in 14 weeks with a dedicated
+                from scratch: architecture, mobile apps, and backend
+                infrastructure, delivered in 14 weeks with a dedicated
                 8-person team.
               </p>
               <div className="flex gap-10 flex-wrap">

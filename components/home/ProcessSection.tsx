@@ -4,7 +4,7 @@ const steps = [
   {
     num: "01",
     title: "Discovery & Strategy",
-    desc: "We start by understanding your domain, users, constraints, and growth trajectory — building a strategic foundation before writing a single line of code.",
+    desc: "We start by understanding your domain, users, constraints, and growth trajectory, building a strategic foundation before writing a single line of code.",
   },
   {
     num: "02",
@@ -14,12 +14,12 @@ const steps = [
   {
     num: "03",
     title: "Engineering & Delivery",
-    desc: "AI-augmented development sprints with continuous integration, automated QA, and transparent progress — faster cycles, fewer surprises.",
+    desc: "AI-augmented development sprints with continuous integration, automated QA, and transparent progress. Faster cycles, fewer surprises.",
   },
   {
     num: "04",
     title: "Scale & Partnership",
-    desc: "We don't disappear at launch. We monitor, iterate, and scale your product alongside your business — an average relationship of 2.5 years.",
+    desc: "We don't disappear at launch. We monitor, iterate, and scale your product alongside your business, with an average relationship of 2.5 years.",
   },
 ];
 

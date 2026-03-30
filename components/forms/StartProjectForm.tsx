@@ -123,9 +123,9 @@ export default function StartProjectForm() {
   const [ndaRequired, setNdaRequired] = useState(false);
 
   const proofPoints: { icon: LucideIcon; title: string; desc: string }[] = [
-    { icon: Gem,       title: "Fully Bespoke — No Templates", desc: "Every line of code is written for your specific domain, users, and growth trajectory." },
-    { icon: Zap,       title: "Accelerated Delivery",         desc: "Our modern development workflow and seasoned 60-person team get you to market faster — without compromising quality." },
-    { icon: Brain,     title: "Deep Domain Expertise",        desc: "HealthTech, FinTech, E-commerce, Legal Tech, Real Estate — we understand your compliance needs, not just your code." },
+    { icon: Gem,       title: "Fully Bespoke. No Templates.", desc: "Every line of code is written for your specific domain, users, and growth trajectory." },
+    { icon: Zap,       title: "Accelerated Delivery",         desc: "Our modern development workflow and seasoned 60-person team get you to market faster, without compromising quality." },
+    { icon: Brain,     title: "Deep Domain Expertise",        desc: "HealthTech, FinTech, E-commerce, Legal Tech, Real Estate: we understand your compliance needs, not just your code." },
     { icon: Handshake, title: "Long-Term Partners",           desc: "We don't disappear at launch. Average client relationship is 2.5 years. Your growth is our mandate." },
   ];
 
@@ -170,7 +170,7 @@ export default function StartProjectForm() {
               <em className="italic text-gold-lt">What&apos;s Next.</em>
             </h1>
             <p className="text-[15px] font-light text-white/50 leading-[1.75] mb-12">
-              We craft <strong className="text-white/80 font-normal">custom digital products</strong> for enterprise teams, mid-size companies, and visionary founders — not templated solutions. Every engagement begins with deep discovery and ends with software that performs at scale.
+              We craft <strong className="text-white/80 font-normal">custom digital products</strong> for enterprise teams, mid-size companies, and visionary founders, not templated solutions. Every engagement begins with deep discovery and ends with software that performs at scale.
             </p>
 
             <div className="flex flex-col gap-0">
@@ -201,7 +201,7 @@ export default function StartProjectForm() {
               />
               <div>
                 <p className="text-[12px] font-light text-white/40 leading-[1.55] italic">
-                  &ldquo;Sachhsoft didn&apos;t just build our product — they brought strategic clarity to every decision. We launched in 14 weeks.&rdquo;
+                  &ldquo;Sachhsoft didn&apos;t just build our product. They brought strategic clarity to every decision. We launched in 14 weeks.&rdquo;
                 </p>
                 <p className="text-[11px] font-normal text-white/25 tracking-[0.06em] mt-1">
                   Kari Cao · CEO, RenewRx
@@ -261,13 +261,13 @@ export default function StartProjectForm() {
                     Let&apos;s start with <em className="italic text-gold">you.</em>
                   </h2>
                   <p className="text-[15px] font-light text-muted leading-[1.65] mb-12 max-w-[480px]">
-                    Tell us who you are and the nature of your organisation — this helps us match you with the right team from day one.
+                    Tell us who you are and the nature of your organisation. This helps us match you with the right team from day one.
                   </p>
 
                   {/* Org type */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      I represent a — <span className="text-gold">*</span>
+                      I represent a: <span className="text-gold">*</span>
                     </label>
                     <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
                       {orgTypes.map((o) => (
@@ -440,7 +440,7 @@ export default function StartProjectForm() {
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
                       Preferred engagement model{" "}
-                      <span className="text-[11px] font-light normal-case tracking-normal text-muted">(optional — we can advise)</span>
+                      <span className="text-[11px] font-light normal-case tracking-normal text-muted">(optional, we can advise)</span>
                     </label>
                     <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
                       {engagements.map((e) => (
@@ -460,7 +460,7 @@ export default function StartProjectForm() {
                     Almost <em className="italic text-gold">there.</em>
                   </h2>
                   <p className="text-[15px] font-light text-muted leading-[1.65] mb-12 max-w-[480px]">
-                    A few final questions so we can prepare a meaningful, personalised response — not a boilerplate reply.
+                    A few final questions so we can prepare a meaningful, personalised response, not a boilerplate reply.
                   </p>
 
                   {/* Source */}
@@ -511,7 +511,7 @@ export default function StartProjectForm() {
                   <label className="flex items-start gap-3 px-[18px] py-4 border border-rule cursor-pointer hover:border-gold/50 hover:bg-[rgba(184,151,90,0.04)] transition-all mb-10">
                     <input type="checkbox" className="mt-1 flex-shrink-0" style={{ accentColor: "#b8975a" }} checked={ndaRequired} onChange={(e) => setNdaRequired(e.target.checked)} />
                     <div className="text-[13px] font-light text-body-text leading-[1.55]">
-                      <strong className="font-medium text-ink">I require an NDA</strong> before sharing full project details — please send one before our first call.
+                      <strong className="font-medium text-ink">I require an NDA</strong> before sharing full project details. Please send one before our first call.
                     </div>
                   </label>
 
@@ -519,7 +519,7 @@ export default function StartProjectForm() {
                   <div className="bg-[rgba(184,151,90,0.08)] border border-[rgba(184,151,90,0.25)] px-6 py-5 mb-10">
                     <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold mb-1.5">What happens next</div>
                     <p className="text-[13px] font-light text-body-text leading-[1.6]">
-                      We personally review every submission and respond within <strong className="font-medium text-ink">one business day</strong> with a short intro call booking link and a few clarifying questions — not a sales pitch.
+                      We personally review every submission and respond within <strong className="font-medium text-ink">one business day</strong> with a short intro call booking link and a few clarifying questions, not a sales pitch.
                     </p>
                   </div>
 
@@ -537,7 +537,7 @@ export default function StartProjectForm() {
                 You&apos;re in <em className="italic text-gold">good hands.</em>
               </h2>
               <p className="text-[16px] font-light text-muted leading-[1.75] max-w-[480px] mx-auto mb-10">
-                We&apos;ve received your submission and will review it personally. Expect a response within one business day — no automation, just a real conversation.
+                We&apos;ve received your submission and will review it personally. Expect a response within one business day. No automation, just a real conversation.
               </p>
 
               {/* Timeline */}

@@ -5,7 +5,7 @@ const services = [
   {
     idx: "01",
     name: "Product Design & Development",
-    desc: "Web apps, mobile experiences, MVPs, and e-commerce — designed to convert and built to last. From first sketch to production release.",
+    desc: "Web apps, mobile experiences, MVPs, and e-commerce, designed to convert and built to last. From first sketch to production release.",
     href: "/services#product-design",
   },
   {
@@ -23,7 +23,7 @@ const services = [
   {
     idx: "04",
     name: "Teams & Talent Integration",
-    desc: "Dedicated engineers who embed in your workflow, tools, and rhythm — no bloat, no ramp-up friction, just immediate velocity.",
+    desc: "Dedicated engineers who embed in your workflow, tools, and rhythm. No bloat, no ramp-up friction, just immediate velocity.",
     href: "/services#team-augmentation",
   },
 ];

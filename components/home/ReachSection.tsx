@@ -14,7 +14,7 @@ const stats = [
   {
     value: "2.5yr",
     label: "Avg. Client Relationship",
-    desc: "We don't disappear at launch — our average engagement lasts two and a half years",
+    desc: "We don't disappear at launch. Our average engagement lasts two and a half years",
   },
   {
     value: "8",

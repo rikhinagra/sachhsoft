@@ -16,7 +16,7 @@ export default function CTASection() {
           </h2>
           <p className="text-[16px] font-light text-white/50 leading-[1.7] mt-5 max-w-[520px]">
             Tell us about your project. We review every submission personally
-            and respond within one business day — no automated replies, no
+            and respond within one business day. No automated replies, no
             sales sequences.
           </p>
         </div>

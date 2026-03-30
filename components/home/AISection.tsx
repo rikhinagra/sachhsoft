@@ -32,11 +32,11 @@ export default function AISection() {
             className="font-serif font-light text-white leading-none tracking-[-0.025em]"
             style={{ fontSize: "clamp(36px, 5.5vw, 78px)" }}
           >
-            We Don&apos;t Just Use AI —<br />
+            We Don&apos;t Just Use AI.<br />
             We <em className="italic text-gold-lt">Build With It.</em>
           </h2>
           <p className="text-[16px] font-light text-white/60 leading-[1.8] mt-7">
-            Every engineer at SACHHSOFT ships with AI-augmented tooling —
+            Every engineer at SACHHSOFT ships with AI-augmented tooling:
             Copilot-assisted code, automated test generation, AI-driven
             architecture review. The result: dramatically faster sprints, fewer
             regressions, and codebases designed to scale from day one.

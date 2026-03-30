@@ -36,7 +36,7 @@ const industries = [
     icon: HeartPulse,
     name: "Healthcare & MedTech",
     tagline: "HIPAA-compliant. Clinically rigorous. Built to save time and lives.",
-    desc: "Healthcare software is unforgiving — a wrong architecture decision doesn't just cost money, it puts patients at risk. We've built across the full healthcare stack: telehealth platforms, EHR integrations, patient portals, and medical device software. We know HIPAA inside out, and we build with compliance as a foundation, not an afterthought.",
+    desc: "Healthcare software is unforgiving. A wrong architecture decision doesn't just cost money, it puts patients at risk. We've built across the full healthcare stack: telehealth platforms, EHR integrations, patient portals, and medical device software. We know HIPAA inside out, and we build with compliance as a foundation, not an afterthought.",
     challenges: [
       "HIPAA & HITECH compliance from day one",
       "HL7 FHIR & EHR system integrations (Epic, Cerner, Athena)",
@@ -85,8 +85,8 @@ const industries = [
     idx: "03",
     icon: ShoppingBag,
     name: "E-Commerce & Retail",
-    tagline: "From first click to checkout — fast, personalised, and built to scale.",
-    desc: "E-commerce is won and lost on performance and experience. A one-second delay costs conversions. A clunky checkout loses customers forever. We build headless storefronts, personalisation engines, inventory systems, and omnichannel experiences that convert visitors into loyal customers — and scale to handle peak traffic without breaking.",
+    tagline: "From first click to checkout: fast, personalised, and built to scale.",
+    desc: "E-commerce is won and lost on performance and experience. A one-second delay costs conversions. A clunky checkout loses customers forever. We build headless storefronts, personalisation engines, inventory systems, and omnichannel experiences that convert visitors into loyal customers and scale to handle peak traffic without breaking.",
     challenges: [
       "Sub-second page loads at high traffic volumes",
       "Personalisation at scale without sacrificing privacy",
@@ -111,7 +111,7 @@ const industries = [
     icon: Scale,
     name: "Legal & LegalTech",
     tagline: "Automating the repetitive. Accelerating the billable.",
-    desc: "Legal teams are drowning in documents, deadlines, and manual processes that should have been automated years ago. We build case management systems, document automation tools, e-signature workflows, and compliance platforms that free lawyers to focus on what only they can do — and dramatically reduce operational overhead for law firms and legal departments.",
+    desc: "Legal teams are drowning in documents, deadlines, and manual processes that should have been automated years ago. We build case management systems, document automation tools, e-signature workflows, and compliance platforms that free lawyers to focus on what only they can do, dramatically reducing operational overhead for law firms and legal departments.",
     challenges: [
       "Secure document storage, versioning, and access control",
       "Complex workflow automation across multi-party processes",
@@ -161,7 +161,7 @@ const industries = [
     icon: Layers,
     name: "SaaS & B2B Software",
     tagline: "Multi-tenant. API-first. Built to grow from 10 users to 10 million.",
-    desc: "SaaS architecture is deceptively complex. Multi-tenancy, usage-based billing, enterprise SSO, API rate limiting, and white-labelling all need to be designed correctly from the start — or you'll spend years paying down technical debt. We've built SaaS platforms from scratch and scaled them to enterprise, with the architecture decisions that make the difference.",
+    desc: "SaaS architecture is deceptively complex. Multi-tenancy, usage-based billing, enterprise SSO, API rate limiting, and white-labelling all need to be designed correctly from the start, or you'll spend years paying down technical debt. We've built SaaS platforms from scratch and scaled them to enterprise, with the architecture decisions that make the difference.",
     challenges: [
       "Multi-tenant data isolation and security architecture",
       "Usage-based and subscription billing complexity",
@@ -366,8 +366,8 @@ export default function IndustriesPage() {
             </h2>
             <p className="text-[15px] font-light text-white/45 mt-5 max-w-[460px] leading-[1.7]">
               We&apos;ve built across verticals not listed here. If your
-              problem is complex, high-stakes, and needs to be done right —
-              we want to hear about it.
+              problem is complex, high-stakes, and needs to be done right.
+              We want to hear about it.
             </p>
           </div>
           <div className="flex flex-col gap-4 items-end max-lg:items-start flex-shrink-0">

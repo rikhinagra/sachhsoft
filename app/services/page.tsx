@@ -22,7 +22,7 @@ const services = [
     idx: "01",
     icon: MonitorSmartphone,
     name: "Product Design & Development",
-    tagline: "From first sketch to production — shipped fast, built to last.",
+    tagline: "From first sketch to production: shipped fast, built to last.",
     desc: "We design and engineer digital products end-to-end. Whether you're launching a new MVP, rebuilding an ageing platform, or scaling an e-commerce experience, our teams combine product thinking with engineering rigour to ship software that users love and businesses depend on.",
     deliverables: [
       "UX Research & Information Architecture",
@@ -42,7 +42,7 @@ const services = [
     icon: Cloud,
     name: "Cloud, DevOps & Infrastructure",
     tagline: "Scale invisibly. Deploy with confidence. Never go down.",
-    desc: "Reliability is not optional — it's the product. We architect cloud environments on AWS and Azure that absorb traffic spikes without flinching, automate your deployment pipelines, and harden your infrastructure against failure. You ship faster. Your users never notice.",
+    desc: "Reliability is not optional. It is the product. We architect cloud environments on AWS and Azure that absorb traffic spikes without flinching, automate your deployment pipelines, and harden your infrastructure against failure. You ship faster. Your users never notice.",
     deliverables: [
       "Cloud Architecture Design (AWS, Azure, GCP)",
       "Kubernetes & Container Orchestration",
@@ -60,8 +60,8 @@ const services = [
     idx: "03",
     icon: BrainCircuit,
     name: "AI & Automation Integration",
-    tagline: "LLMs, agents, and automation — built into the core of your product.",
-    desc: "We don't bolt AI onto the side of your product — we embed it into the foundation. From LLM-powered features and RAG knowledge systems to fully autonomous agentic workflows, we help companies move from AI experiments to production systems that actually work at scale.",
+    tagline: "LLMs, agents, and automation, built into the core of your product.",
+    desc: "We don't bolt AI onto the side of your product. We embed it into the foundation. From LLM-powered features and RAG knowledge systems to fully autonomous agentic workflows, we help companies move from AI experiments to production systems that actually work at scale.",
     deliverables: [
       "LLM Integration (OpenAI, Anthropic, Gemini)",
       "RAG Pipelines & Knowledge Bases",
@@ -79,8 +79,8 @@ const services = [
     idx: "04",
     icon: Users,
     name: "Teams & Talent Integration",
-    tagline: "Senior engineers who embed in your team — no ramp-up, immediate velocity.",
-    desc: "When you need to move faster than your current team allows, we place experienced engineers directly inside your workflow. We use your tools, join your standups, and commit to your codebase. No account managers in the middle, no offshore handoffs — just exceptional engineers who feel like they've been there from day one.",
+    tagline: "Senior engineers who embed in your team. No ramp-up, immediate velocity.",
+    desc: "When you need to move faster than your current team allows, we place experienced engineers directly inside your workflow. We use your tools, join your standups, and commit to your codebase. No account managers in the middle, no offshore handoffs. Just exceptional engineers who feel like they've been there from day one.",
     deliverables: [
       "Dedicated Senior Engineers & Tech Leads",
       "Full Sprint Integration (Jira, Linear, Notion)",
@@ -109,12 +109,12 @@ const differentiators = [
   {
     num: "03",
     title: "AI-augmented velocity",
-    desc: "Our engineers ship with AI tooling embedded in every workflow — moving 3× faster without compromising code quality.",
+    desc: "Our engineers ship with AI tooling embedded in every workflow, moving 3× faster without compromising code quality.",
   },
   {
     num: "04",
     title: "Long-term partnerships",
-    desc: "Our average client relationship is 2.5 years. We don't disappear at launch — we stay to scale what we build.",
+    desc: "Our average client relationship is 2.5 years. We don't disappear at launch. We stay to scale what we build.",
   },
 ];
 
@@ -141,7 +141,7 @@ export default function ServicesPage() {
             <p className="text-[17px] font-light text-white/50 leading-[1.8] mt-8 max-w-[560px]">
               Four core practices. One seamlessly accountable team. Everything
               you need to design, build, scale, and maintain exceptional
-              software — without the coordination overhead.
+              software, without the coordination overhead.
             </p>
 
             {/* Quick nav */}

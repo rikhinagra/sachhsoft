@@ -15,7 +15,7 @@ const values = [
   {
     icon: Code2,
     title: "Craft over speed",
-    desc: "We take pride in what we ship. Every line of code, every design decision, every architecture choice — it matters.",
+    desc: "We take pride in what we ship. Every line of code, every design decision, every architecture choice. It matters.",
   },
   {
     icon: Heart,
@@ -78,7 +78,7 @@ export default function CareersPage() {
             <p className="text-[17px] font-light text-white/50 leading-[1.8] mt-8 max-w-[560px]">
               We are a team of builders, designers, and engineers who care
               deeply about craft. If that sounds like you, we want to hear from
-              you — even when we are not actively hiring.
+              you, even when we are not actively hiring.
             </p>
           </RevealWrapper>
         </div>

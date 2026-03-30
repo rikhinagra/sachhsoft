@@ -16,7 +16,7 @@ const values = [
   {
     icon: Gem,
     title: "Craft",
-    desc: "We build to last, not just to ship. Every architecture decision, every line of code, every design interaction is intentional — built for the product you have today and the scale you'll need tomorrow.",
+    desc: "We build to last, not just to ship. Every architecture decision, every line of code, every design interaction is intentional: built for the product you have today and the scale you'll need tomorrow.",
   },
   {
     icon: Handshake,
@@ -26,12 +26,12 @@ const values = [
   {
     icon: MessageSquare,
     title: "Clarity",
-    desc: "No jargon, no hidden blockers, no surprises. We communicate with radical transparency — weekly updates, honest timelines, and a single point of contact who knows your product inside and out.",
+    desc: "No jargon, no hidden blockers, no surprises. We communicate with radical transparency: weekly updates, honest timelines, and a single point of contact who knows your product inside and out.",
   },
   {
     icon: Zap,
     title: "Velocity",
-    desc: "Speed without compromise. Our AI-augmented workflows, battle-tested frameworks, and 60+ expert engineers let us move faster than any agency you've worked with — without cutting corners.",
+    desc: "Speed without compromise. Our AI-augmented workflows, battle-tested frameworks, and 60+ expert engineers let us move faster than any agency you've worked with, without cutting corners.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
               <em className="italic text-gold-lt">changes everything.</em>
             </h1>
             <p className="text-[17px] font-light text-white/50 leading-[1.8] mt-8 max-w-[580px]">
-              We&apos;re a bespoke software studio founded in Chicago — building
+              We&apos;re a bespoke software studio founded in Chicago, building
               the digital products that ambitious companies use to compete,
               grow, and lead their industries.
             </p>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 Sachhsoft was founded with a simple conviction: the market was
                 full of offshore shops that moved fast and broke things, and
                 boutique agencies that moved slow and charged a fortune. There
-                was nothing in between — a team that could move with startup
+                was nothing in between: a team that could move with startup
                 urgency while delivering enterprise-grade craft.
               </p>
               <p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-off border border-rule p-10 max-md:p-8">
               <div className="font-serif text-[13px] italic text-ink/60 leading-[1.7] mb-5">
-                &ldquo;The standard is not what the client expects — it&apos;s
+                &ldquo;The standard is not what the client expects. It&apos;s
                 what we know is possible.&rdquo;
               </div>
               <div className="text-[12px] font-medium tracking-[0.08em] text-ink">
@@ -309,7 +309,7 @@ export default function AboutPage() {
               <em className="italic text-gold-lt">worth building.</em>
             </h2>
             <p className="text-[15px] font-light text-white/45 mt-5 max-w-[460px] leading-[1.7]">
-              Tell us about your vision. We respond within one business day —
+              Tell us about your vision. We respond within one business day,
               personally, not through an automated sequence.
             </p>
           </div>
