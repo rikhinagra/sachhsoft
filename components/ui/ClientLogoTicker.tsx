@@ -53,9 +53,9 @@ export default function ClientLogoTicker() {
       {/* Ticker */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute left-0 top-0 bottom-0 w-24 max-md:w-12 max-sm:w-8 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to right, #ffffff, transparent)" }} />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        <div className="absolute right-0 top-0 bottom-0 w-24 max-md:w-12 max-sm:w-8 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to left, #ffffff, transparent)" }} />
 
         <div className="flex overflow-hidden">
@@ -69,7 +69,7 @@ export default function ClientLogoTicker() {
             }}
           >
             {items.map((client, i) => (
-              <div key={i} className="flex items-center gap-12 flex-shrink-0">
+              <div key={i} className="flex items-center gap-12 max-md:gap-8 flex-shrink-0">
                 {/* Logo */}
                 <div className={`${client.large ? "h-[95px]" : "h-[46px]"} flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-4 py-2" : ""}`}>
                   {client.svg ? (

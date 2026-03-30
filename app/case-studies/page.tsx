@@ -288,7 +288,7 @@ export default function CaseStudiesPage() {
             </div>
           </RevealWrapper>
 
-          <StaggerContainer className="grid grid-cols-2 gap-8 max-lg:grid-cols-1">
+          <StaggerContainer className="grid grid-cols-2 gap-8 max-lg:grid-cols-1 max-md:gap-6">
             {rest.map((cs) => (
               <StaggerItem key={cs.id}>
                 <div className="group bg-white border border-rule p-10 flex flex-col h-full hover:border-gold/40 transition-all duration-300 max-md:p-8">

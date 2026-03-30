@@ -142,7 +142,7 @@ export default function StartProjectForm() {
   return (
     <div className="min-h-screen bg-off">
       {/* Nav override */}
-      <nav className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-14 bg-off/95 backdrop-blur-xl border-b border-rule max-md:px-6">
+      <nav className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-14 max-sm:px-4 bg-off/95 backdrop-blur-xl border-b border-rule max-md:px-6">
         <Link href="/" className="font-sans font-semibold text-[14px] tracking-[0.22em] uppercase text-ink no-underline">
           Sachhsoft
         </Link>
@@ -151,7 +151,7 @@ export default function StartProjectForm() {
         </Link>
       </nav>
 
-      <div className="grid min-h-screen max-md:grid-cols-1" style={{ gridTemplateColumns: "420px 1fr" }}>
+      <div className="grid min-h-screen max-md:grid-cols-1 max-md:block" style={{ gridTemplateColumns: "420px 1fr" }}>
         {/* ── LEFT PANEL (sticky dark) ── */}
         <aside
           className="bg-ink px-[52px] py-[120px] sticky top-0 h-screen overflow-y-auto flex flex-col justify-between max-md:static max-md:h-auto max-md:px-8 max-md:py-20"
@@ -412,7 +412,7 @@ export default function StartProjectForm() {
                       Estimated project investment <span className="text-gold">*</span>
                     </label>
                     <div className="text-center mb-8">
-                      <div className="font-serif font-semibold text-[64px] tracking-[-0.03em] text-ink leading-none">
+                      <div className="font-serif font-semibold text-[64px] max-md:text-[48px] max-sm:text-[36px] tracking-[-0.03em] text-ink leading-none">
                         {budgetLabels[budget].display}
                       </div>
                       <div className="text-[12px] font-normal tracking-[0.12em] uppercase text-muted mt-1.5">
@@ -547,7 +547,7 @@ export default function StartProjectForm() {
                   { time: "~48h", label: "Intro call booked" },
                   { time: "~1wk", label: "Proposal sent" },
                 ].map((t) => (
-                  <div key={t.label} className="flex-1 py-6 px-5 border-r border-rule last:border-r-0 text-center max-sm:border-r-0 max-sm:border-b max-sm:last:border-b-0">
+                  <div key={t.label} className="flex-1 py-6 px-5 border-r border-rule last:border-r-0 text-center max-sm:border-r-0 max-sm:border-b last:max-sm:border-b-0">
                     <div className="font-serif text-[28px] font-semibold text-gold tracking-[-0.01em]">{t.time}</div>
                     <div className="text-[11px] tracking-[0.1em] uppercase text-muted mt-1">{t.label}</div>
                   </div>

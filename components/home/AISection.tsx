@@ -20,7 +20,7 @@ export default function AISection() {
   return (
     <section className="bg-ink" aria-labelledby="ai-heading">
       <div className="max-w-[1280px] mx-auto px-16 py-[120px] max-lg:px-8 max-md:px-6 max-md:py-20">
-      <RevealWrapper className="grid grid-cols-[5fr_4fr] gap-[100px] items-start max-lg:grid-cols-1 max-lg:gap-12">
+      <RevealWrapper className="grid grid-cols-[5fr_4fr] gap-[100px] items-start max-lg:grid-cols-1 max-lg:gap-12 max-md:gap-8">
         {/* Left */}
         <div>
           <div className="text-[11px] tracking-[0.2em] uppercase text-white/35 mb-5 flex items-center gap-3">
@@ -60,7 +60,7 @@ export default function AISection() {
               key={i}
               className="py-7 border-b border-white/8 first:border-t first:border-white/8 flex items-center justify-between gap-6"
             >
-              <div className="font-serif font-semibold text-[52px] text-gold-lt tracking-[-0.02em] leading-none flex-shrink-0 max-md:text-[42px]">
+              <div className="font-serif font-semibold text-[52px] text-gold-lt tracking-[-0.02em] leading-none flex-shrink-0 max-md:text-[42px] max-sm:text-[32px]">
                 {m.val}
               </div>
               <div className="text-[13px] font-light text-white/50 text-right leading-[1.6] min-w-0 overflow-hidden">
