@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 // Ainstinct inline SVG
 const AinstinctLogo = () => (
-  <svg viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-auto">
+  <svg viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-9 w-auto">
     <circle cx="36" cy="36" r="30.525" stroke="currentColor" strokeWidth="10.95" />
     <circle cx="99" cy="61" r="9" fill="currentColor" />
     <path d="M96 0H108L78 72H66L96 0Z" fill="currentColor" />
@@ -13,14 +13,14 @@ const AinstinctLogo = () => (
 
 // LexGo Solutions as styled text — matches their nav logo exactly
 const LexGoLogo = () => (
-  <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 800, fontSize: "26px", letterSpacing: "-0.5px", color: "#0a1f44", whiteSpace: "nowrap" }}>
+  <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 800, fontSize: "22px", letterSpacing: "-0.5px", color: "#0a1f44", whiteSpace: "nowrap" }}>
     LexGo<span style={{ color: "#d4af37" }}>Solutions</span>
   </span>
 );
 
 // SixteenNine as styled text (logo is white-only, text looks cleaner)
 const SixteenNineLogo = () => (
-  <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 900, fontSize: "24px", letterSpacing: "0.14em", color: "#18160f" }}>
+  <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 900, fontSize: "21px", letterSpacing: "0.14em", color: "#18160f" }}>
     SIXTEENINE™
   </span>
 );
@@ -68,16 +68,16 @@ export default function ClientLogoTicker() {
             {items.map((client, i) => (
               <div key={i} className="flex items-center gap-12 flex-shrink-0">
                 {/* Logo */}
-                <div className={`h-[52px] flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-5 py-2" : ""}`}>
+                <div className={`h-[46px] flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-4 py-2" : ""}`}>
                   {client.svg ? (
-                    <div className="text-ink h-[40px] flex items-center">
+                    <div className="text-ink h-[36px] flex items-center">
                       {client.svg}
                     </div>
                   ) : (
                     <img
                       src={client.url}
                       alt={client.name}
-                      className="max-h-[48px] max-w-[160px] object-contain"
+                      className="max-h-[42px] max-w-[150px] object-contain"
                       onError={(e) => {
                         const el = e.currentTarget as HTMLImageElement;
                         el.style.display = "none";
