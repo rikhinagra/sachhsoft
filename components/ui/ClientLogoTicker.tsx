@@ -35,6 +35,7 @@ const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boole
   { name: "LexGo Solutions", svg: <LexGoLogo /> },
   { name: "Chicago Indian Arts", url: "https://res.cloudinary.com/dom3oj7ya/image/upload/v1770979601/CIA-logo-black_snmlaz.webp" },
   { name: "PhoneCheck", url: "/logos/phonecheck.webp", large: true },
+  { name: "Taylor's Tacos", url: "/logos/taylors-tacos.webp" },
 ];
 
 export default function ClientLogoTicker() {
