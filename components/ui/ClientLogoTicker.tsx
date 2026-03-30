@@ -70,7 +70,7 @@ export default function ClientLogoTicker() {
             {items.map((client, i) => (
               <div key={i} className="flex items-center gap-12 flex-shrink-0">
                 {/* Logo */}
-                <div className={`h-[46px] flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-4 py-2" : ""}`}>
+                <div className={`${client.large ? "h-[95px]" : "h-[46px]"} flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-4 py-2" : ""}`}>
                   {client.svg ? (
                     <div className="text-ink h-[36px] flex items-center">
                       {client.svg}
@@ -79,7 +79,7 @@ export default function ClientLogoTicker() {
                     <img
                       src={client.url}
                       alt={client.name}
-                      className={`${client.large ? "max-h-[70px] max-w-[180px]" : "max-h-[42px] max-w-[150px]"} object-contain`}
+                      className={`${client.large ? "max-h-[95px] max-w-[200px]" : "max-h-[42px] max-w-[150px]"} object-contain`}
                       style={client.invert ? { filter: "brightness(0)" } : undefined}
                       onError={(e) => {
                         const el = e.currentTarget as HTMLImageElement;
