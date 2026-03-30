@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import { organizationSchema, serviceSchema } from "@/lib/schema";
 
 const outfit = Outfit({
@@ -105,6 +106,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );
