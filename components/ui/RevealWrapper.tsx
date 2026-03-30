@@ -22,7 +22,7 @@ export default function RevealWrapper({
       transition={{
         duration: 0.75,
         delay: delay / 1000,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       }}
     >
       {children}
