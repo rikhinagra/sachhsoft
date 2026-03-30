@@ -2,14 +2,29 @@
 
 import { motion } from "framer-motion";
 
-const clients = [
-  { name: "RenewRx", domain: "renewrx.health" },
-  { name: "Databahn", domain: "databahn.ai" },
-  { name: "Redline Lab", domain: "redlinelab.io" },
-  { name: "Rizzarr", domain: "rizzarr.com" },
-  { name: "PhoneCheck", domain: "phonecheck.com" },
-  { name: "SixteenNine", domain: "sixteenine.com" },
-  { name: "Ainstinct", domain: "ainstinct.ai" },
+// Ainstinct inline SVG
+const AinstinctLogo = () => (
+  <svg viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-7 w-auto">
+    <circle cx="36" cy="36" r="30.525" stroke="currentColor" strokeWidth="10.95" />
+    <circle cx="99" cy="61" r="9" fill="currentColor" />
+    <path d="M96 0H108L78 72H66L96 0Z" fill="currentColor" />
+  </svg>
+);
+
+// SixteenNine as styled text (logo is white-only, text looks cleaner)
+const SixteenNineLogo = () => (
+  <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 900, fontSize: "18px", letterSpacing: "0.14em", color: "#18160f" }}>
+    SIXTEENINE™
+  </span>
+);
+
+const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boolean }[] = [
+  { name: "RenewRx",    url: "https://cdn.prod.website-files.com/677eb93874391ef718526bb9/6900554b1cf1f6b0feed728e_renewrx-r-logo.svg" },
+  { name: "Databahn",   url: "https://cdn.prod.website-files.com/67eb571d0fe797071c2c2759/67ebaa6ba00e7b767d1db02e_logo.avif", dark: true },
+  { name: "Redline Lab",url: "https://www.redlinelab.io/assets/REDLINELAB-logo-600-100-D8pVPWFE.png" },
+  { name: "Rizzarr",    url: "https://d15o1r2675r1cy.cloudfront.net/static/images/rizzarr-logo-updated.png" },
+  { name: "SixteenNine",svg: <SixteenNineLogo /> },
+  { name: "Ainstinct",  svg: <AinstinctLogo /> },
 ];
 
 export default function ClientLogoTicker() {
@@ -43,27 +58,31 @@ export default function ClientLogoTicker() {
             }}
           >
             {items.map((client, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 flex-shrink-0 group"
-              >
-                <div className="w-[120px] h-[44px] flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                  <img
-                    src={`https://logo.clearbit.com/${client.domain}`}
-                    alt={client.name}
-                    className="max-h-[36px] max-w-[110px] object-contain"
-                    onError={(e) => {
-                      // Fallback to company name text if logo fails
-                      const parent = (e.currentTarget as HTMLImageElement).parentElement;
-                      if (parent) {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                        parent.innerHTML = `<span style="font-family:var(--font-outfit);font-size:13px;font-weight:500;letter-spacing:0.06em;color:#4a4740;white-space:nowrap">${client.name}</span>`;
-                      }
-                    }}
-                  />
+              <div key={i} className="flex items-center gap-12 flex-shrink-0">
+                {/* Logo */}
+                <div className={`h-[40px] flex items-center justify-center transition-all duration-300 ${client.dark ? "bg-ink px-4 py-1.5" : ""}`}>
+                  {client.svg ? (
+                    <div className="text-ink h-[28px] flex items-center">
+                      {client.svg}
+                    </div>
+                  ) : (
+                    <img
+                      src={client.url}
+                      alt={client.name}
+                      className="max-h-[34px] max-w-[130px] object-contain"
+                      onError={(e) => {
+                        const el = e.currentTarget as HTMLImageElement;
+                        el.style.display = "none";
+                        const span = document.createElement("span");
+                        span.style.cssText = "font-size:13px;font-weight:500;letter-spacing:0.06em;color:#4a4740;white-space:nowrap";
+                        span.textContent = client.name;
+                        el.parentElement?.appendChild(span);
+                      }}
+                    />
+                  )}
                 </div>
-                {/* Divider dot */}
-                <div className="w-1 h-1 rounded-full bg-rule flex-shrink-0" />
+                {/* Divider */}
+                <div className="w-px h-5 bg-rule flex-shrink-0" />
               </div>
             ))}
           </motion.div>
