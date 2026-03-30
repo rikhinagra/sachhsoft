@@ -11,6 +11,13 @@ const AinstinctLogo = () => (
   </svg>
 );
 
+// LexGo Solutions as styled text — matches their nav logo exactly
+const LexGoLogo = () => (
+  <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 800, fontSize: "20px", letterSpacing: "-0.5px", color: "#0a1f44", whiteSpace: "nowrap" }}>
+    LexGo<span style={{ color: "#d4af37" }}>Solutions</span>
+  </span>
+);
+
 // SixteenNine as styled text (logo is white-only, text looks cleaner)
 const SixteenNineLogo = () => (
   <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 900, fontSize: "18px", letterSpacing: "0.14em", color: "#18160f" }}>
@@ -25,6 +32,7 @@ const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boole
   { name: "Rizzarr",    url: "https://d15o1r2675r1cy.cloudfront.net/static/images/rizzarr-logo-updated.png" },
   { name: "SixteenNine",svg: <SixteenNineLogo /> },
   { name: "Ainstinct",  svg: <AinstinctLogo /> },
+  { name: "LexGo Solutions", svg: <LexGoLogo /> },
 ];
 
 export default function ClientLogoTicker() {
