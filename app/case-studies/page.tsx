@@ -1,8 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import RevealWrapper from "@/components/ui/RevealWrapper";
 import { StaggerContainer, StaggerItem } from "@/components/ui/StaggerContainer";
 import { ArrowUpRight } from "lucide-react";
+
+// Inline SVG logos for clients without image URLs
+const AinstinctLogo = () => (
+  <svg viewBox="0 0 108 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto text-ink">
+    <circle cx="36" cy="36" r="30.525" stroke="currentColor" strokeWidth="10.95" />
+    <circle cx="99" cy="61" r="9" fill="currentColor" />
+    <path d="M96 0H108L78 72H66L96 0Z" fill="currentColor" />
+  </svg>
+);
+
+const LexGoLogo = () => (
+  <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 800, fontSize: "20px", letterSpacing: "-0.5px", color: "#0a1f44", whiteSpace: "nowrap" }}>
+    LexGo<span style={{ color: "#d4af37" }}>Solutions</span>
+  </span>
+);
+
+const SixteenNineLogo = () => (
+  <span style={{ fontFamily: "var(--font-outfit)", fontWeight: 900, fontSize: "19px", letterSpacing: "0.14em", color: "#18160f" }}>
+    SIXTEENINE™
+  </span>
+);
 
 export const metadata: Metadata = {
   title: "Case Studies — Real Results, Real Clients",
@@ -11,12 +33,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://sachhsoft.com/case-studies" },
 };
 
-const caseStudies = [
+const caseStudies: {
+  id: string; idx: string; client: string; industry: string; headline: string;
+  desc: string; metrics: { value: string; sup: string; label: string }[];
+  tech: string[]; accent: string; bg: string; featured: boolean;
+  logoUrl?: string; logoSvg?: React.ReactNode; logoInvert?: boolean;
+}[] = [
   {
     id: "renewrx",
     idx: "01",
     client: "RenewRx",
     industry: "Healthcare & MedTech",
+    logoUrl: "https://cdn.prod.website-files.com/677eb93874391ef718526bb9/6900554b1cf1f6b0feed728e_renewrx-r-logo.svg",
     headline: "Built the platform powering next-generation maternal care for diabetic pregnancies.",
     desc: "RenewRx is reimagining prenatal care for women with gestational diabetes and metabolic conditions. We built their full product stack: a patient-facing mobile app with AI-powered meal and glucose tracking, a real-time provider dashboard, and EHR integration. Care teams now have live visibility into patient progress between visits, without adding work or staff.",
     metrics: [
@@ -34,6 +62,7 @@ const caseStudies = [
     idx: "02",
     client: "PhoneCheck",
     industry: "Mobile Technology & Device Certification",
+    logoUrl: "/logos/phonecheck.webp",
     headline: "Built the platform bringing trust to the global secondary device market.",
     desc: "PhoneCheck is the leading source of device certification for buyers and sellers of used phones, tablets, and smartwatches. We built their cloud-enabled certification platform featuring an 80-point automated diagnostic, ADISA-certified data erasure, lock detection, battery health checks, and device history reports. Everything is accessible via dashboard and open API, designed for high-volume wholesale dealers processing thousands of devices a month.",
     metrics: [
@@ -51,6 +80,8 @@ const caseStudies = [
     idx: "03",
     client: "Databahn",
     industry: "Cybersecurity & Data Pipeline Management",
+    logoUrl: "https://cdn.prod.website-files.com/67eb571d0fe797071c2c2759/67ebaa6ba00e7b767d1db02e_logo.avif",
+    logoInvert: true,
     headline: "Built the AI-powered data pipeline platform trusted by global enterprise security teams.",
     desc: "Databahn's founding team had a vision: simplify how enterprises collect, manage, and route their security and observability data. We built their full platform from the Smart Edge collection layer, through the Highway orchestration engine and Cruz AI data engineer, all the way to the Reef intelligence hub. Global enterprises now have real-time pipeline control with 500+ integrations and deep partnerships with Microsoft Sentinel, AWS Security Lake, and Splunk.",
     metrics: [
@@ -68,6 +99,7 @@ const caseStudies = [
     idx: "04",
     client: "LexGo Solutions",
     industry: "Legal & LegalTech",
+    logoSvg: <LexGoLogo />,
     headline: "Built the AI-powered platform helping personal injury firms 2x their caseload without hiring.",
     desc: "LexGo Solutions pairs dedicated case management specialists with AI-powered workflows to help personal injury firms scale without the overhead of hiring. We built their full platform including 24/7 AI intake automation, medical record intelligence, predictive case valuation, and smart document generation. PI firms can now handle more cases faster while their attorneys focus entirely on high-value work.",
     metrics: [
@@ -85,6 +117,7 @@ const caseStudies = [
     idx: "05",
     client: "Chicago Indian Arts",
     industry: "Arts, Culture & Non-Profit",
+    logoUrl: "https://res.cloudinary.com/dom3oj7ya/image/upload/v1770979601/CIA-logo-black_snmlaz.webp",
     headline: "Designed and built the digital home for Chicago's most ambitious Indian cultural platform.",
     desc: "Chicago Indian Arts is a non-profit founded by Jigar Shah to celebrate Indian cultural heritage through three flagship programs: the Chicago Indian Literature Festival, Chicago Indian Fashion Week, and the Wildlife Photography &amp; Visual Arts Festival. We designed and developed their complete website and digital platform including event registration, program pages, gallery, vendor and brand intake forms, press and media section, and a donation system. The result is a premium online presence worthy of their world-class events at Navy Pier, Congress Plaza Hotel, and the Art Institute of Chicago.",
     metrics: [
@@ -102,6 +135,7 @@ const caseStudies = [
     idx: "06",
     client: "Taylor's Tacos",
     industry: "Food, Hospitality & Catering",
+    logoUrl: "/logos/taylors-tacos.webp",
     headline: "Built the digital platform for Chicago's #1 taco catering company.",
     desc: "Taylor's Tacos is a Chicago-born catering company founded by Taylor and Maya Mason on the West Side of Chicago, serving over half a million tacos since 2016. We built their complete digital presence including catering booking forms, staffed event menus, delivery and pick-up ordering, an events calendar, and a quote request system. This beloved Chicago institution now has the online home it deserves to serve corporate clients, schools, non-profits, medical teams, and weddings across the city.",
     metrics: [
@@ -119,6 +153,7 @@ const caseStudies = [
     idx: "07",
     client: "RIZZARR",
     industry: "AI & Creator Economy",
+    logoUrl: "https://d15o1r2675r1cy.cloudfront.net/static/images/rizzarr-logo-updated.png",
     headline: "Built the AI-powered content intelligence platform solving the $8B branded content problem.",
     desc: "RIZZARR is an AI-powered content intelligence platform founded by award-winning journalist Ashley M. Williams and CTO Christopher Peters, formerly Zapier's first data scientist who helped grow the company from $1.2M to a multi-billion dollar enterprise. We built their full platform including an AI creator matching engine, predictive campaign scoring, real-time performance analytics, a brand-creator marketplace, and an experimentation hub. Brands like American Heart Association, JP Morgan Chase, and Comcast NBC Universal now use it to co-create authentic, measurable content with vetted, purpose-driven creators.",
     metrics: [
@@ -136,6 +171,7 @@ const caseStudies = [
     idx: "08",
     client: "SIXTEENINE",
     industry: "Fashion & Streetwear E-Commerce",
+    logoSvg: <SixteenNineLogo />,
     headline: "Built the premium Shopify storefront for a bold, unapologetic streetwear brand.",
     desc: "SIXTEENINE is a premium streetwear brand built on the philosophy of being bold and unapologetic. We built their complete Shopify storefront including custom collection pages, product detail pages with size guides and limited stock alerts, a global ambassador and affiliate program, community showcase section, and a frictionless checkout experience. The result is a premium digital presence that matches their identity and converts browsers into buyers.",
     metrics: [
@@ -153,6 +189,7 @@ const caseStudies = [
     idx: "09",
     client: "aInstinct",
     industry: "AI Creative Technology",
+    logoSvg: <AinstinctLogo />,
     headline: "Built the platform for the next era of AI-native brand content and virtual influence.",
     desc: "aInstinct is a marketplace connecting brands with AI-native creators and content, where human instinct directs every piece of work that ships. We built their platform and digital presence, enabling global brands like Crocs, Zara, Lululemon, and Oakley to commission AI-generated editorial campaigns, virtual influence, and performance creative at scale. The philosophy behind it: AI can generate anything, but knowing what matters takes human instinct.",
     metrics: [
@@ -218,6 +255,22 @@ export default function CaseStudiesPage() {
                   >
                     {featured.industry}
                   </span>
+                </div>
+
+                {/* Logo */}
+                <div className="mb-7 h-10 flex items-center">
+                  {featured.logoSvg ? (
+                    <div>{featured.logoSvg}</div>
+                  ) : featured.logoUrl ? (
+                    <img
+                      src={featured.logoUrl}
+                      alt={featured.client}
+                      className="max-h-10 max-w-[180px] object-contain"
+                      style={featured.logoInvert ? { filter: "brightness(0)" } : undefined}
+                    />
+                  ) : (
+                    <span className="text-[13px] font-medium tracking-[0.1em] uppercase text-ink">{featured.client}</span>
+                  )}
                 </div>
 
                 <h2
@@ -306,9 +359,20 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  {/* Client */}
-                  <div className="text-[11px] font-medium tracking-[0.16em] uppercase text-muted mb-3">
-                    {cs.client}
+                  {/* Logo / Client */}
+                  <div className="h-9 flex items-center mb-4">
+                    {cs.logoSvg ? (
+                      <div>{cs.logoSvg}</div>
+                    ) : cs.logoUrl ? (
+                      <img
+                        src={cs.logoUrl}
+                        alt={cs.client}
+                        className="max-h-9 max-w-[160px] object-contain"
+                        style={cs.logoInvert ? { filter: "brightness(0)" } : undefined}
+                      />
+                    ) : (
+                      <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-muted">{cs.client}</span>
+                    )}
                   </div>
 
                   {/* Headline */}
