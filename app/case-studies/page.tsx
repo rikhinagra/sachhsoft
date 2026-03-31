@@ -37,7 +37,7 @@ const caseStudies: {
   id: string; idx: string; client: string; industry: string; headline: string;
   desc: string; metrics: { value: string; sup: string; label: string }[];
   tech: string[]; accent: string; bg: string; featured: boolean;
-  logoUrl?: string; logoSvg?: React.ReactNode; logoInvert?: boolean;
+  logoUrl?: string; logoSvg?: React.ReactNode; logoInvert?: boolean; logoLg?: boolean;
 }[] = [
   {
     id: "renewrx",
@@ -63,6 +63,7 @@ const caseStudies: {
     client: "PhoneCheck",
     industry: "Mobile Technology & Device Certification",
     logoUrl: "/logos/phonecheck.webp",
+    logoLg: true,
     headline: "Built the platform bringing trust to the global secondary device market.",
     desc: "PhoneCheck is the leading source of device certification for buyers and sellers of used phones, tablets, and smartwatches. We built their cloud-enabled certification platform featuring an 80-point automated diagnostic, ADISA-certified data erasure, lock detection, battery health checks, and device history reports. Everything is accessible via dashboard and open API, designed for high-volume wholesale dealers processing thousands of devices a month.",
     metrics: [
@@ -118,6 +119,7 @@ const caseStudies: {
     client: "Chicago Indian Arts",
     industry: "Arts, Culture & Non-Profit",
     logoUrl: "https://res.cloudinary.com/dom3oj7ya/image/upload/v1770979601/CIA-logo-black_snmlaz.webp",
+    logoLg: true,
     headline: "Designed and built the digital home for Chicago's most ambitious Indian cultural platform.",
     desc: "Chicago Indian Arts is a non-profit founded by Jigar Shah to celebrate Indian cultural heritage through three flagship programs: the Chicago Indian Literature Festival, Chicago Indian Fashion Week, and the Wildlife Photography &amp; Visual Arts Festival. We designed and developed their complete website and digital platform including event registration, program pages, gallery, vendor and brand intake forms, press and media section, and a donation system. The result is a premium online presence worthy of their world-class events at Navy Pier, Congress Plaza Hotel, and the Art Institute of Chicago.",
     metrics: [
@@ -360,14 +362,14 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Logo / Client */}
-                  <div className="h-9 flex items-center mb-4">
+                  <div className={`${cs.logoLg ? "h-14" : "h-9"} flex items-center mb-4`}>
                     {cs.logoSvg ? (
                       <div>{cs.logoSvg}</div>
                     ) : cs.logoUrl ? (
                       <img
                         src={cs.logoUrl}
                         alt={cs.client}
-                        className="max-h-9 max-w-[160px] object-contain"
+                        className={`${cs.logoLg ? "max-h-14 max-w-[200px]" : "max-h-9 max-w-[160px]"} object-contain`}
                         style={cs.logoInvert ? { filter: "brightness(0)" } : undefined}
                       />
                     ) : (
