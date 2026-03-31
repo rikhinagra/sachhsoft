@@ -106,16 +106,18 @@ export default function CareersPage() {
                     If you are exceptional at what you do, send us your CV
                     anyway. The right people always find a place here.
                   </p>
-                  <a
-                    href="mailto:hello@sachhsoft.com"
-                    className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
-                  >
-                    Send Your CV
-                    <ArrowUpRight size={14} />
-                  </a>
-                  <p className="text-[12px] font-light text-muted mt-5 tracking-[0.04em]">
-                    hello@sachhsoft.com
-                  </p>
+                  <div className="inline-flex flex-col items-center">
+                    <a
+                      href="mailto:hello@sachhsoft.com"
+                      className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+                    >
+                      Send Your CV
+                      <ArrowUpRight size={14} />
+                    </a>
+                    <p className="text-[12px] font-light text-muted mt-4 tracking-[0.04em]">
+                      hello@sachhsoft.com
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -244,16 +246,18 @@ export default function CareersPage() {
               role opens up.
             </p>
           </div>
-          <div className="flex flex-col gap-4 items-end max-lg:items-start flex-shrink-0">
-            <a
-              href="mailto:hello@sachhsoft.com"
-              className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
-            >
-              Send Your CV
-            </a>
-            <span className="text-[12px] font-light text-white/30 tracking-[0.06em]">
-              hello@sachhsoft.com
-            </span>
+          <div className="flex flex-col items-end max-lg:items-start flex-shrink-0">
+            <div className="inline-flex flex-col items-center">
+              <a
+                href="mailto:hello@sachhsoft.com"
+                className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+              >
+                Send Your CV
+              </a>
+              <span className="text-[12px] font-light text-white/30 tracking-[0.06em] mt-4">
+                hello@sachhsoft.com
+              </span>
+            </div>
           </div>
         </RevealWrapper>
       </section>
