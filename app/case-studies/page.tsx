@@ -348,12 +348,12 @@ export default function CaseStudiesPage() {
               <StaggerItem key={cs.id}>
                 <div className="group bg-white border border-rule p-10 flex flex-col h-full hover:border-gold/40 transition-all duration-300 max-md:p-8">
                   {/* Header */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center gap-4">
+                  <div className="mb-8">
+                    <div className="flex items-center gap-3 flex-wrap">
                       <span className="font-serif text-[13px] text-muted">{cs.idx}</span>
-                      <span className="block w-6 h-px bg-rule" />
+                      <span className="block w-5 h-px bg-rule flex-shrink-0" />
                       <span
-                        className="text-[10px] font-medium tracking-[0.14em] uppercase px-3 py-1 border"
+                        className="text-[10px] font-medium tracking-[0.12em] uppercase px-3 py-1 border leading-relaxed"
                         style={{ color: cs.accent, borderColor: `${cs.accent}40` }}
                       >
                         {cs.industry}
@@ -362,14 +362,14 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Logo / Client */}
-                  <div className={`${cs.logoLg ? "h-14" : "h-9"} flex items-center mb-4`}>
+                  <div className={`${cs.logoLg ? "h-16" : "h-9"} flex items-center mb-4`}>
                     {cs.logoSvg ? (
                       <div>{cs.logoSvg}</div>
                     ) : cs.logoUrl ? (
                       <img
                         src={cs.logoUrl}
                         alt={cs.client}
-                        className={`${cs.logoLg ? "max-h-14 max-w-[200px]" : "max-h-9 max-w-[160px]"} object-contain`}
+                        className={`${cs.logoLg ? "max-h-16 max-w-[220px]" : "max-h-9 max-w-[160px]"} object-contain`}
                         style={cs.logoInvert ? { filter: "brightness(0)" } : undefined}
                       />
                     ) : (
