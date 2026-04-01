@@ -106,6 +106,7 @@ export default function StartProjectForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
 
@@ -140,6 +141,7 @@ export default function StartProjectForm() {
         firstName,
         lastName,
         email,
+        phone,
         company,
         role,
         orgType,
@@ -334,10 +336,20 @@ export default function StartProjectForm() {
                   </div>
 
                   <div className="mb-7">
-                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      Work Email <span className="text-gold">*</span>
-                    </label>
-                    <input type="email" className={inputCls} placeholder="james@yourcompany.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+                      <div>
+                        <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
+                          Work Email <span className="text-gold">*</span>
+                        </label>
+                        <input type="email" className={inputCls} placeholder="james@yourcompany.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
+                          Phone Number
+                        </label>
+                        <input type="tel" className={inputCls} placeholder="+1 (312) 000-0000" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mb-7">
