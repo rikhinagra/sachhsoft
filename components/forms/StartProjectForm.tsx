@@ -137,16 +137,21 @@ export default function StartProjectForm() {
     setSubmitError("");
     try {
       const payload = {
-        name: `${firstName} ${lastName}`.trim(),
+        firstName,
+        lastName,
         email,
-        phone: "",
         company,
+        role,
         orgType,
+        industry,
         projectType,
         timeline,
         engagement,
         budget: budgetLabels[budget]?.display || "",
         description: projectDesc,
+        priorAgency,
+        additionalInfo,
+        ndaRequired,
         heardFrom: source,
       };
 
