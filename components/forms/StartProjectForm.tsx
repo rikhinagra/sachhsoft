@@ -189,9 +189,9 @@ export default function StartProjectForm() {
           <Image
             src="/logo.png"
             alt="SACHHSOFT"
-            width={140}
-            height={35}
-            style={{ height: 35, width: "auto", filter: "brightness(0)" }}
+            width={355}
+            height={60}
+            style={{ height: 18, width: "auto", filter: "brightness(0)" }}
           />
         </Link>
         <Link href="/" className="text-[13px] font-normal text-muted no-underline flex items-center gap-2 hover:text-ink transition-colors">

@@ -53,10 +53,10 @@ export default function Nav() {
         <Image
           src="/logo.png"
           alt="SACHHSOFT"
-          width={140}
-          height={35}
+          width={355}
+          height={60}
           style={{
-            height: 35,
+            height: 18,
             width: "auto",
             filter: isDark || (scrolled && isHome) ? "none" : "brightness(0)",
             transition: "filter 0.3s ease",

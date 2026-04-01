@@ -35,9 +35,9 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="SACHHSOFT"
-              width={140}
-              height={35}
-              style={{ height: 35, width: "auto" }}
+              width={355}
+              height={60}
+              style={{ height: 18, width: "auto" }}
             />
             <div className="text-[12px] font-light text-white/30 mt-2 tracking-[0.08em]">
               Bespoke Software. Built for What&apos;s Next.
