@@ -158,7 +158,7 @@ export default function StartProjectForm() {
       };
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyBEgUCo8JZIwyZEGHPZNuvg80ApNtXCzEa1wBBSKhGH_286rnenVukcujkCl7N7tc-jg/exec",
+        process.env.NEXT_PUBLIC_APPS_SCRIPT_URL!,
         {
           method: "POST",
           mode: "no-cors",

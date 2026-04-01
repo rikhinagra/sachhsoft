@@ -4,7 +4,7 @@ export default function WhatsAppFloat() {
   return (
     <>
       <a
-        href="https://wa.me/18484688141?text=Hello!%20I'm%20interested%20in%20your%20services."
+        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hello!%20I'm%20interested%20in%20your%20services.`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
