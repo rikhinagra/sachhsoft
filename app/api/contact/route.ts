@@ -30,13 +30,16 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
 
     // 1 ── Forward to Google Apps Script (Sheets + Email)
+    // Apps Script returns a 302 redirect — we use redirect:"follow" and
+    // treat any response as success since the script runs regardless.
     const appsScriptUrl = process.env.APPS_SCRIPT_URL;
     if (appsScriptUrl) {
       try {
         await fetch(appsScriptUrl, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(data),
+          redirect: "follow",
         });
       } catch (err) {
         console.error("Apps Script error:", err);
