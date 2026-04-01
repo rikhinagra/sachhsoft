@@ -158,15 +158,13 @@ export default function StartProjectForm() {
         heardFrom: source,
       };
 
-      await fetch(
-        process.env.NEXT_PUBLIC_APPS_SCRIPT_URL!,
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Server error");
 
       setSubmitted(true);
     } catch {
