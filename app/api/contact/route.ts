@@ -20,33 +20,14 @@ ${d.description || "—"}
 
 🔍 <b>Heard From:</b> ${d.heardFrom || "—"}
 🔒 <b>NDA Required:</b> ${d.ndaRequired || "No"}
-🏛 <b>Org Type:</b> ${d.orgType || "—"}
-
-<i>Submitted via sachhsoft.vercel.app</i>`;
+🏛 <b>Org Type:</b> ${d.orgType || "—"}`;
 }
 
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
 
-    // 1 ── Forward to Google Apps Script (Sheets + Email)
-    // Apps Script returns a 302 redirect — we use redirect:"follow" and
-    // treat any response as success since the script runs regardless.
-    const appsScriptUrl = process.env.APPS_SCRIPT_URL;
-    if (appsScriptUrl) {
-      try {
-        await fetch(appsScriptUrl, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(data),
-          redirect: "follow",
-        });
-      } catch (err) {
-        console.error("Apps Script error:", err);
-      }
-    }
-
-    // 2 ── Send Telegram notification
+    // Send Telegram notification
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 

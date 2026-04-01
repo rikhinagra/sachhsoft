@@ -158,13 +158,20 @@ export default function StartProjectForm() {
         heardFrom: source,
       };
 
-      const res = await fetch("/api/contact", {
+      // 1 — Google Sheets + Email (Apps Script, proven working)
+      await fetch(process.env.NEXT_PUBLIC_APPS_SCRIPT_URL!, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Server error");
+      // 2 — Telegram notification (server-side API route)
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
 
       setSubmitted(true);
     } catch {
