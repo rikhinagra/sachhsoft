@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Building2,
   Users,
@@ -184,8 +185,14 @@ export default function StartProjectForm() {
     <div className="min-h-screen bg-off">
       {/* Nav override */}
       <nav className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-14 max-sm:px-4 bg-off/95 backdrop-blur-xl border-b border-rule max-md:px-6">
-        <Link href="/" className="font-sans font-semibold text-[14px] tracking-[0.22em] uppercase text-ink no-underline">
-          Sachhsoft
+        <Link href="/" className="flex items-center" aria-label="SACHHSOFT Home">
+          <Image
+            src="/logo.png"
+            alt="SACHHSOFT"
+            width={140}
+            height={35}
+            style={{ height: 35, width: "auto", filter: "brightness(0)" }}
+          />
         </Link>
         <Link href="/" className="text-[13px] font-normal text-muted no-underline flex items-center gap-2 hover:text-ink transition-colors">
           <ArrowLeft size={14} strokeWidth={1.5} /> Back to site

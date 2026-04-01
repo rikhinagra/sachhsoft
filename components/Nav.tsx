@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -48,12 +49,20 @@ export default function Nav() {
       }}
     >
       {/* Logo */}
-      <Link
-        href="/"
-        className="font-sans font-semibold text-[14px] tracking-[0.22em] uppercase no-underline relative z-10 transition-colors duration-300"
-        style={{ color: isDark || (scrolled && isHome) ? "#ffffff" : "#18160f" }}
-      >
-        Sachhsoft
+      <Link href="/" className="relative z-10 flex items-center" aria-label="SACHHSOFT Home">
+        <Image
+          src="/logo.png"
+          alt="SACHHSOFT"
+          width={140}
+          height={35}
+          style={{
+            height: 35,
+            width: "auto",
+            filter: isDark || (scrolled && isHome) ? "none" : "brightness(0)",
+            transition: "filter 0.3s ease",
+          }}
+          priority
+        />
       </Link>
 
       {/* Desktop nav — centered (lg = 1024px+, hide on tablet & mobile) */}

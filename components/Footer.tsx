@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Services: [
@@ -31,9 +32,13 @@ export default function Footer() {
         <div className="flex justify-between items-start mb-12 gap-10 flex-wrap max-lg:flex-col">
           {/* Brand */}
           <div>
-            <div className="font-sans font-semibold text-[14px] tracking-[0.22em] uppercase text-white">
-              Sachhsoft
-            </div>
+            <Image
+              src="/logo.png"
+              alt="SACHHSOFT"
+              width={140}
+              height={35}
+              style={{ height: 35, width: "auto" }}
+            />
             <div className="text-[12px] font-light text-white/30 mt-2 tracking-[0.08em]">
               Bespoke Software. Built for What&apos;s Next.
             </div>
