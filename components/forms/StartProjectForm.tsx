@@ -129,9 +129,43 @@ export default function StartProjectForm() {
     { icon: Handshake, title: "Long-Term Partners",           desc: "We don't disappear at launch. Average client relationship is 2.5 years. Your growth is our mandate." },
   ];
 
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
   const handleSubmit = async () => {
-    // TODO: connect to API route or email service (Resend, etc.)
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const payload = {
+        name: `${firstName} ${lastName}`.trim(),
+        email,
+        phone: "",
+        company,
+        orgType,
+        projectType,
+        timeline,
+        engagement,
+        budget: budgetLabels[budget]?.display || "",
+        description: projectDesc,
+        heardFrom: source,
+      };
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyBEgUCo8JZIwyZEGHPZNuvg80ApNtXCzEa1wBBSKhGH_286rnenVukcujkCl7N7tc-jg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please email us at hello@sachhsoft.com");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const stepLabels = ["About You", "Your Project", "Scope & Budget", "Final Details"];
@@ -523,7 +557,10 @@ export default function StartProjectForm() {
                     </p>
                   </div>
 
-                  <FormNav step={4} onBack={() => setStep(3)} onNext={handleSubmit} canProceed={!!email} isSubmit />
+                  {submitError && (
+                    <p className="text-[13px] text-red-500 mt-4">{submitError}</p>
+                  )}
+                  <FormNav step={4} onBack={() => setStep(3)} onNext={handleSubmit} canProceed={!!email && !submitting} isSubmit submitting={submitting} />
                 </div>
               )}
             </>
@@ -576,13 +613,14 @@ export default function StartProjectForm() {
 }
 
 function FormNav({
-  step, onBack, onNext, canProceed, isSubmit,
+  step, onBack, onNext, canProceed, isSubmit, submitting,
 }: {
   step: number;
   onBack?: () => void;
   onNext: () => void;
   canProceed: boolean;
   isSubmit?: boolean;
+  submitting?: boolean;
 }) {
   return (
     <div className="flex items-center justify-between pt-10 border-t border-rule mt-10">
@@ -603,7 +641,7 @@ function FormNav({
         disabled={!canProceed}
         className="flex items-center gap-2.5 text-[12px] font-semibold tracking-[0.16em] uppercase text-white bg-ink px-12 py-4 border-none transition-all duration-200 hover:bg-gold hover:tracking-[0.2em] disabled:bg-rule disabled:text-muted disabled:cursor-not-allowed disabled:tracking-[0.16em] font-sans"
       >
-        {isSubmit ? "Submit" : "Continue"}
+        {submitting ? "Submitting..." : isSubmit ? "Submit" : "Continue"}
         <ChevronRight size={14} strokeWidth={2} />
       </button>
     </div>
