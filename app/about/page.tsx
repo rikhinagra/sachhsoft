@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   description:
     "SACHHSOFT is a bespoke software development studio founded in Chicago. We build exceptional digital products for enterprise teams, mid-size companies, and startup founders — globally.",
   alternates: { canonical: "https://sachhsoft.com/about" },
+  openGraph: {
+    title: "About SACHHSOFT — Bespoke Software Studio, Chicago",
+    description: "60 expert engineers. 15+ companies launched. 1M+ users maintained. We build software that moves markets.",
+    url: "https://sachhsoft.com/about",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About SACHHSOFT",
+    description: "60 expert engineers. 15+ companies launched. 1M+ users maintained.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const values = [

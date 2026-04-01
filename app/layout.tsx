@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
-import { organizationSchema, serviceSchema } from "@/lib/schema";
+import { organizationSchema, serviceSchema, localBusinessSchema, webSiteSchema } from "@/lib/schema";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-site-verification-code",
+    google: "eNquyVXs0LTgbkx2GAHNFu7wO_9ATgseyz1qChcEgfo",
   },
 };
 
@@ -97,7 +97,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema(), serviceSchema()]),
+            __html: JSON.stringify([organizationSchema(), serviceSchema(), localBusinessSchema(), webSiteSchema()]),
           }}
         />
       </head>

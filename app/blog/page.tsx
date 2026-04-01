@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   description:
     "Thinking on software, product strategy, HealthTech, FinTech, AI, and what it takes to build exceptional digital products — from the team at SACHHSOFT.",
   alternates: { canonical: "https://sachhsoft.com/blog" },
+  openGraph: {
+    title: "Blog — Software Insights from SACHHSOFT",
+    description: "Thinking on software, product strategy, HealthTech, FinTech, AI, and what it takes to build exceptional digital products.",
+    url: "https://sachhsoft.com/blog",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — SACHHSOFT",
+    description: "Software, product strategy, HealthTech, FinTech, and AI insights.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function BlogPage() {

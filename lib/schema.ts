@@ -80,6 +80,70 @@ export function serviceSchema() {
   };
 }
 
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://sachhsoft.com/#localbusiness",
+    name: "SACHHSOFT",
+    url: "https://sachhsoft.com",
+    logo: "https://sachhsoft.com/logo.png",
+    image: "https://sachhsoft.com/og-image.jpg",
+    description:
+      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Based in Chicago, serving clients globally.",
+    telephone: "+1-848-468-8141",
+    email: "hello@sachhsoft.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chicago",
+      addressRegion: "IL",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.8781,
+      longitude: -87.6298,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/sachhsoft",
+      "https://twitter.com/sachhsoft",
+    ],
+    priceRange: "$$$",
+    areaServed: "Worldwide",
+  };
+}
+
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://sachhsoft.com/#website",
+    name: "SACHHSOFT",
+    url: "https://sachhsoft.com",
+    description:
+      "Bespoke software development for enterprise teams, mid-size companies, and startup founders.",
+    publisher: {
+      "@type": "Organization",
+      name: "SACHHSOFT",
+      url: "https://sachhsoft.com",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://sachhsoft.com/blog?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
 export function faqSchema(faqs: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",

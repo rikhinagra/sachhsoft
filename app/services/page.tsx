@@ -14,6 +14,18 @@ export const metadata: Metadata = {
   description:
     "Product design & development, cloud & DevOps infrastructure, AI & automation integration, and dedicated team augmentation — delivered by SACHHSOFT from Chicago, globally.",
   alternates: { canonical: "https://sachhsoft.com/services" },
+  openGraph: {
+    title: "Services — Full-Spectrum Software Engineering | SACHHSOFT",
+    description: "Product design, cloud DevOps, AI integration, and dedicated team augmentation. Bespoke engineering from Chicago, delivered globally.",
+    url: "https://sachhsoft.com/services",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services — SACHHSOFT",
+    description: "Product design, cloud DevOps, AI integration, and dedicated team augmentation.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const services = [

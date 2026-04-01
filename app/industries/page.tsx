@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   description:
     "SACHHSOFT builds bespoke software across Healthcare, FinTech, E-Commerce, Legal, Real Estate, and SaaS — with deep domain expertise in each vertical.",
   alternates: { canonical: "https://sachhsoft.com/industries" },
+  openGraph: {
+    title: "Industries We Serve — SACHHSOFT",
+    description: "Healthcare, FinTech, E-Commerce, Legal Tech, Real Estate, and SaaS — deep domain expertise in every vertical we build for.",
+    url: "https://sachhsoft.com/industries",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industries — SACHHSOFT",
+    description: "Healthcare, FinTech, E-Commerce, Legal Tech, Real Estate, and SaaS.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const overview = [
