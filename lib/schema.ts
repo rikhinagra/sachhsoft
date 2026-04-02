@@ -21,8 +21,10 @@ export function organizationSchema() {
       url: "https://sachhsoft.com/start-a-project",
     },
     sameAs: [
-      "https://www.linkedin.com/company/sachhsoft",
-      "https://twitter.com/sachhsoft",
+      "https://www.linkedin.com/company/sachhsoft/",
+      "https://www.facebook.com/Sachhsoft/",
+      "https://www.instagram.com/sachhsoft_usa/",
+      "https://medium.com/@sachhsoft",
     ],
   };
 }
@@ -111,8 +113,10 @@ export function localBusinessSchema() {
       closes: "18:00",
     },
     sameAs: [
-      "https://www.linkedin.com/company/sachhsoft",
-      "https://twitter.com/sachhsoft",
+      "https://www.linkedin.com/company/sachhsoft/",
+      "https://www.facebook.com/Sachhsoft/",
+      "https://www.instagram.com/sachhsoft_usa/",
+      "https://medium.com/@sachhsoft",
     ],
     priceRange: "$$$",
     areaServed: "Worldwide",

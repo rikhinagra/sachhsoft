@@ -1,5 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
+
+const socialLinks = [
+  { href: "https://www.linkedin.com/company/sachhsoft/", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://www.facebook.com/Sachhsoft/", icon: Facebook, label: "Facebook" },
+  { href: "https://www.instagram.com/sachhsoft_usa/", icon: Instagram, label: "Instagram" },
+  { href: "https://medium.com/@sachhsoft", icon: null, label: "Medium" },
+];
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Services: [
@@ -44,6 +52,25 @@ export default function Footer() {
             </div>
             <div className="text-[11px] font-light text-white/20 mt-1 tracking-[0.06em]">
               Chicago · Global · Since 2015
+            </div>
+            {/* Social icons */}
+            <div className="flex items-center gap-4 mt-5">
+              {socialLinks.map(({ href, icon: Icon, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-white/30 hover:text-white transition-colors duration-200"
+                >
+                  {Icon ? (
+                    <Icon size={16} strokeWidth={1.5} />
+                  ) : (
+                    <span className="text-[13px] font-semibold leading-none">M</span>
+                  )}
+                </Link>
+              ))}
             </div>
           </div>
 
