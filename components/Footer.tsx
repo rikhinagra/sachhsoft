@@ -1,12 +1,47 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Facebook, Instagram } from "lucide-react";
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/company/sachhsoft/", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://www.facebook.com/Sachhsoft/", icon: Facebook, label: "Facebook" },
-  { href: "https://www.instagram.com/sachhsoft_usa/", icon: Instagram, label: "Instagram" },
-  { href: "https://medium.com/@sachhsoft", icon: null, label: "Medium" },
+  {
+    href: "https://www.linkedin.com/company/sachhsoft/",
+    label: "LinkedIn",
+    svg: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    ),
+  },
+  {
+    href: "https://www.facebook.com/Sachhsoft/",
+    label: "Facebook",
+    svg: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    ),
+  },
+  {
+    href: "https://www.instagram.com/sachhsoft_usa/",
+    label: "Instagram",
+    svg: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    ),
+  },
+  {
+    href: "https://medium.com/@sachhsoft",
+    label: "Medium",
+    svg: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+      </svg>
+    ),
+  },
 ];
 
 const footerLinks: Record<string, { label: string; href: string }[]> = {
@@ -55,7 +90,7 @@ export default function Footer() {
             </div>
             {/* Social icons */}
             <div className="flex items-center gap-4 mt-5">
-              {socialLinks.map(({ href, icon: Icon, label }) => (
+              {socialLinks.map(({ href, label, svg }) => (
                 <Link
                   key={label}
                   href={href}
@@ -64,11 +99,7 @@ export default function Footer() {
                   aria-label={label}
                   className="text-white/30 hover:text-white transition-colors duration-200"
                 >
-                  {Icon ? (
-                    <Icon size={16} strokeWidth={1.5} />
-                  ) : (
-                    <span className="text-[13px] font-semibold leading-none">M</span>
-                  )}
+                  {svg}
                 </Link>
               ))}
             </div>
