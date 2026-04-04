@@ -27,6 +27,11 @@ export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
 
+    // Honeypot check — bots fill hidden fields, humans don't
+    if (data.website) {
+      return NextResponse.json({ success: true }); // fake success so bot thinks it worked
+    }
+
     // Send Telegram notification
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;

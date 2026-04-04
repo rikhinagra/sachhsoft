@@ -133,6 +133,7 @@ export default function StartProjectForm() {
 
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const handleSubmit = async () => {
     setSubmitting(true);
@@ -156,6 +157,7 @@ export default function StartProjectForm() {
         additionalInfo,
         ndaRequired,
         heardFrom: source,
+        website: honeypot,
       };
 
       // 1 — Google Sheets + Email (Apps Script, proven working)
@@ -188,6 +190,17 @@ export default function StartProjectForm() {
 
   return (
     <div className="min-h-screen bg-off">
+      {/* Honeypot — invisible to humans, bots fill it, we reject them */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ display: "none" }}
+      />
       {/* Nav override */}
       <nav className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-14 max-sm:px-4 bg-off/95 backdrop-blur-xl border-b border-rule max-md:px-6">
         <Link href="/" className="flex items-center" aria-label="SACHHSOFT Home">
