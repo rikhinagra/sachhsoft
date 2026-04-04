@@ -24,6 +24,8 @@ const securityHeaders = [
       "font-src 'self' fonts.gstatic.com data:",
       // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos)
       "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net",
+      // Videos: self + Webflow CDN (hero video)
+      "media-src 'self' cdn.prod.website-files.com",
       // API calls: self + Google Apps Script (form submission)
       "connect-src 'self' script.google.com script.googleusercontent.com",
       // No iframes needed
