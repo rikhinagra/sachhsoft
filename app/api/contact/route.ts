@@ -93,9 +93,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Contact API error:", err);
+    // Log real error privately — only visible in Vercel logs, never sent to user
+    console.error("CONTACT_API_ERROR:", err);
+    // Send generic message — hacker learns absolutely nothing
     return NextResponse.json(
-      { success: false, error: "Submission failed" },
+      { error: "An unexpected error occurred. Please try again later." },
       { status: 500 }
     );
   }
