@@ -1,4 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+
+// Strict schema — defines exactly what data is valid
+const contactSchema = z.object({
+  firstName:      z.string().min(1),
+  lastName:       z.string().min(1),
+  email:          z.string().email(),
+  phone:          z.string().optional(),
+  company:        z.string().optional(),
+  role:           z.string().optional(),
+  orgType:        z.string().optional(),
+  industry:       z.string().optional(),
+  projectType:    z.string().optional(),
+  timeline:       z.string().optional(),
+  engagement:     z.string().optional(),
+  budget:         z.string().optional(),
+  description:    z.string().optional(),
+  priorAgency:    z.string().optional(),
+  additionalInfo: z.string().optional(),
+  ndaRequired:    z.union([z.boolean(), z.string()]).optional(),
+  heardFrom:      z.string().optional(),
+  website:        z.string().optional(), // honeypot field
+});
 
 function formatTelegramMessage(d: Record<string, string>) {
   return `🔔 <b>New Project Inquiry!</b>
@@ -30,6 +53,15 @@ export async function POST(req: NextRequest) {
     // Honeypot check — bots fill hidden fields, humans don't
     if (data.website) {
       return NextResponse.json({ success: true }); // fake success so bot thinks it worked
+    }
+
+    // Zod validation — reject garbage data with a generic message
+    const result = contactSchema.safeParse(data);
+    if (!result.success) {
+      return NextResponse.json(
+        { error: "Invalid input. Please check your details." },
+        { status: 400 }
+      );
     }
 
     // Send Telegram notification
