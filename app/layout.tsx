@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   authors: [{ name: "SACHHSOFT", url: "https://sachhsoft.com" }],
   creator: "SACHHSOFT",
   publisher: "SACHHSOFT",
-  metadataBase: new URL("https://sachhsoft.vercel.app"),
+  metadataBase: new URL("https://sachhsoft.com"),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
