@@ -4,18 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Building2,
-  Users,
-  Rocket,
-  Sparkles,
-  RefreshCw,
-  GitBranch,
-  UsersRound,
-  Zap,
-  Calendar,
-  Clock,
-  Repeat,
   Gem,
+  Zap,
   Brain,
   Handshake,
   Lock,
@@ -25,52 +15,12 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-type Step = 1 | 2 | 3 | 4;
-
-const orgTypes: { value: string; icon: LucideIcon; title: string; desc: string }[] = [
-  { value: "enterprise", icon: Building2,   title: "Enterprise",         desc: "500+ employees, complex integrations, governance requirements" },
-  { value: "midsize",    icon: Users,        title: "Mid-Size Company",   desc: "50–500 employees, scaling operations, modernising systems" },
-  { value: "startup",    icon: Rocket,       title: "Startup / Founder",  desc: "Pre-seed to Series B, building a new product, moving fast" },
-];
-
-const projectTypes: { value: string; icon: LucideIcon; title: string; desc: string }[] = [
-  { value: "newproduct", icon: Sparkles,   title: "New Product from Scratch",       desc: "MVP, greenfield platform, or new digital venture" },
-  { value: "rebuild",    icon: RefreshCw,  title: "Rebuild / Modernise",            desc: "Replace legacy systems, re-platform, or rewrite" },
-  { value: "extend",     icon: GitBranch,  title: "Extend Existing Product",        desc: "Add features, integrations, or scale infrastructure" },
-  { value: "team",       icon: UsersRound, title: "Dedicated Team / Augmentation",  desc: "Embed engineers alongside your existing team" },
-];
-
-const timelines: { value: string; icon: LucideIcon; title: string; desc: string }[] = [
-  { value: "asap",     icon: Zap,      title: "ASAP / Urgent",        desc: "Need to be live within 8–12 weeks" },
-  { value: "quarter",  icon: Calendar, title: "This Quarter",         desc: "3–4 months, planned delivery" },
-  { value: "half",     icon: Clock,    title: "6–12 Months",          desc: "Multi-phase build, longer planning horizon" },
-  { value: "ongoing",  icon: Repeat,   title: "Ongoing / Retainer",   desc: "Continuous development and iteration" },
-];
-
-const engagements = [
-  { value: "project", title: "Fixed Project", desc: "Defined scope, timeline & budget" },
-  { value: "team", title: "Dedicated Team", desc: "Full-time engineers embedded with you" },
-  { value: "tm", title: "Time & Material", desc: "Flexible billing as scope evolves" },
-];
-
-const budgetLabels: Record<number, { display: string; context: string }> = {
-  0: { display: "$25K", context: "Discovery & rapid prototype" },
-  1: { display: "$35K", context: "Small MVP or feature build" },
-  2: { display: "$50K", context: "Ideal for MVP or Phase 1 product" },
-  3: { display: "$75K", context: "Full MVP with backend & mobile" },
-  4: { display: "$100K", context: "Mid-size product build" },
-  5: { display: "$150K", context: "Multi-feature platform build" },
-  6: { display: "$200K", context: "Enterprise feature set" },
-  7: { display: "$250K", context: "Large-scale product or migration" },
-  8: { display: "$350K", context: "Enterprise platform" },
-  9: { display: "$500K", context: "Full enterprise programme" },
-  10: { display: "$500K+", context: "Strategic multi-year engagement" },
-};
+type Step = 1 | 2 | 3;
 
 function OptionCard({
-  value, icon: Icon, title, desc, selected, onSelect,
+  value, title, desc, selected, onSelect,
 }: {
-  value: string; icon?: LucideIcon; title: string; desc: string; selected: boolean; onSelect: () => void;
+  value: string; title: string; desc: string; selected: boolean; onSelect: () => void;
 }) {
   return (
     <button
@@ -87,11 +37,6 @@ function OptionCard({
           <Check size={11} strokeWidth={2.5} />
         </span>
       )}
-      {Icon && (
-        <span className="mb-3 block text-gold">
-          <Icon size={20} strokeWidth={1.5} />
-        </span>
-      )}
       <div className="text-[14px] font-medium text-ink mb-1 tracking-[-0.01em]">{title}</div>
       <div className="text-[12px] font-light text-muted leading-[1.55]">{desc}</div>
     </button>
@@ -103,7 +48,6 @@ export default function StartProjectForm() {
   const [submitted, setSubmitted] = useState(false);
 
   // Form state
-  const [orgType, setOrgType] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -114,15 +58,11 @@ export default function StartProjectForm() {
   const [projectType, setProjectType] = useState("");
   const [industry, setIndustry] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
-
   const [timeline, setTimeline] = useState("");
-  const [budget, setBudget] = useState(2);
-  const [engagement, setEngagement] = useState("");
 
   const [source, setSource] = useState("");
   const [priorAgency, setPriorAgency] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
-
 
   const proofPoints: { icon: LucideIcon; title: string; desc: string }[] = [
     { icon: Gem,       title: "Fully Bespoke. No Templates.", desc: "Every line of code is written for your specific domain, users, and growth trajectory." },
@@ -146,12 +86,9 @@ export default function StartProjectForm() {
         phone,
         company,
         role,
-        orgType,
         industry,
         projectType,
         timeline,
-        engagement,
-        budget: budgetLabels[budget]?.display || "",
         description: projectDesc,
         priorAgency,
         additionalInfo,
@@ -159,7 +96,6 @@ export default function StartProjectForm() {
         website: honeypot,
       };
 
-      // 1 — Google Sheets + Email (Apps Script, proven working)
       const appsScriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
       if (appsScriptUrl) {
         await fetch(appsScriptUrl, {
@@ -170,7 +106,6 @@ export default function StartProjectForm() {
         });
       }
 
-      // 2 — Telegram notification (server-side API route)
       fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -185,14 +120,20 @@ export default function StartProjectForm() {
     }
   };
 
-  const stepLabels = ["About You", "Your Project", "Scope & Budget", "Final Details"];
+  const stepLabels = ["About You", "Your Project", "Final Details"];
 
   const inputCls =
     "w-full px-[18px] py-[14px] border border-rule bg-off text-ink font-sans text-[15px] font-light outline-none transition-all duration-200 focus:border-gold focus:bg-white placeholder:text-muted";
 
+  const selectStyle = {
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239b9690' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")`,
+    backgroundRepeat: "no-repeat" as const,
+    backgroundPosition: "right 16px center",
+    paddingRight: "40px",
+  };
+
   return (
     <div className="min-h-screen bg-off">
-      {/* Honeypot — invisible to humans, bots fill it, we reject them */}
       <input
         type="text"
         name="website"
@@ -203,7 +144,6 @@ export default function StartProjectForm() {
         aria-hidden="true"
         style={{ display: "none" }}
       />
-      {/* Nav override */}
       <nav className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-14 max-sm:px-4 bg-off/95 backdrop-blur-xl border-b border-rule max-md:px-6">
         <Link href="/" className="flex items-center" aria-label="SACHHSOFT Home">
           <Image
@@ -220,7 +160,7 @@ export default function StartProjectForm() {
       </nav>
 
       <div className="grid min-h-screen max-md:grid-cols-1 max-md:block" style={{ gridTemplateColumns: "420px 1fr" }}>
-        {/* ── LEFT PANEL (sticky dark) ── */}
+        {/* ── LEFT PANEL ── */}
         <aside
           className="bg-ink px-[52px] pt-[140px] pb-[120px] sticky top-0 h-screen overflow-y-auto flex flex-col justify-between max-md:static max-md:h-auto max-md:px-8 max-md:pt-[108px] max-md:pb-16"
         >
@@ -259,7 +199,6 @@ export default function StartProjectForm() {
             </div>
           </div>
 
-          {/* Bottom trust */}
           <div className="pt-10 mt-10">
             <div className="flex items-start gap-3 mb-4">
               <img
@@ -295,7 +234,6 @@ export default function StartProjectForm() {
                   const done = step > s;
                   return (
                     <div key={label} className="flex-1 relative">
-                      {/* Connector line */}
                       {i < stepLabels.length - 1 && (
                         <div className="absolute top-3.5 left-[calc(100%)] w-full h-px bg-rule z-0" />
                       )}
@@ -329,22 +267,9 @@ export default function StartProjectForm() {
                     Let&apos;s start with <em className="italic text-gold">you.</em>
                   </h2>
                   <p className="text-[15px] font-light text-muted leading-[1.65] mb-12 max-w-[480px]">
-                    Tell us who you are and the nature of your organisation. This helps us match you with the right team from day one.
+                    Tell us who you are so we can match you with the right team from day one.
                   </p>
 
-                  {/* Org type */}
-                  <div className="mb-7">
-                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      I represent a: <span className="text-gold">*</span>
-                    </label>
-                    <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
-                      {orgTypes.map((o) => (
-                        <OptionCard key={o.value} {...o} selected={orgType === o.value} onSelect={() => setOrgType(o.value)} />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Name */}
                   <div className="mb-7">
                     <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                       <div>
@@ -392,7 +317,7 @@ export default function StartProjectForm() {
                     </div>
                   </div>
 
-                  <FormNav step={1} onNext={() => setStep(2)} canProceed={!!orgType && !!firstName && !!email} />
+                  <FormNav step={1} onNext={() => setStep(2)} canProceed={!!firstName && !!email} />
                 </div>
               )}
 
@@ -406,16 +331,23 @@ export default function StartProjectForm() {
                     No need for a perfect brief. We want to understand your problem, your users, and the outcome you&apos;re building toward.
                   </p>
 
-                  {/* Project type */}
+                  {/* Project type — dropdown */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
                       What are you looking to build? <span className="text-gold">*</span>
                     </label>
-                    <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
-                      {projectTypes.map((p) => (
-                        <OptionCard key={p.value} {...p} selected={projectType === p.value} onSelect={() => setProjectType(p.value)} />
-                      ))}
-                    </div>
+                    <select
+                      className={inputCls + " appearance-none"}
+                      value={projectType}
+                      onChange={(e) => setProjectType(e.target.value)}
+                      style={selectStyle}
+                    >
+                      <option value="" disabled>Select project type</option>
+                      <option value="newproduct">New Product from Scratch</option>
+                      <option value="rebuild">Rebuild / Modernise</option>
+                      <option value="extend">Extend Existing Product</option>
+                      <option value="team">Dedicated Team / Augmentation</option>
+                    </select>
                   </div>
 
                   {/* Industry */}
@@ -427,12 +359,7 @@ export default function StartProjectForm() {
                       className={inputCls + " appearance-none"}
                       value={industry}
                       onChange={(e) => setIndustry(e.target.value)}
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239b9690' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right 16px center",
-                        paddingRight: "40px",
-                      }}
+                      style={selectStyle}
                     >
                       <option value="" disabled>Select your industry</option>
                       {["Healthcare & MedTech","FinTech & Financial Services","E-Commerce & Retail","Law & Legal Technology","Real Estate & PropTech","Education & EdTech","Logistics & On-Demand","SaaS / B2B Software","Consumer Mobile","Other"].map((o) => (
@@ -441,98 +368,45 @@ export default function StartProjectForm() {
                     </select>
                   </div>
 
-                  {/* Description */}
+                  {/* Description — no character limit */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      Describe your project <span className="text-gold">*</span>
+                      Describe your project
                     </label>
                     <textarea
                       className={inputCls}
                       style={{ minHeight: "140px", resize: "vertical" }}
                       placeholder="What problem are you solving? Who are your users? What does success look like in 12 months?..."
                       value={projectDesc}
-                      onChange={(e) => setProjectDesc(e.target.value.slice(0, 1000))}
+                      onChange={(e) => setProjectDesc(e.target.value)}
                     />
-                    <div className="text-[11px] text-muted text-right mt-1.5 tracking-[0.04em]">
-                      {projectDesc.length} / 1000
-                    </div>
                   </div>
 
-                  <FormNav step={2} onBack={() => setStep(1)} onNext={() => setStep(3)} canProceed={!!projectType && !!industry && projectDesc.length >= 30} />
+                  {/* Timeline — dropdown */}
+                  <div className="mb-7">
+                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
+                      Target Timeline
+                    </label>
+                    <select
+                      className={inputCls + " appearance-none"}
+                      value={timeline}
+                      onChange={(e) => setTimeline(e.target.value)}
+                      style={selectStyle}
+                    >
+                      <option value="" disabled>Select timeline</option>
+                      <option value="asap">ASAP / Urgent</option>
+                      <option value="quarter">This Quarter</option>
+                      <option value="half">6–12 Months</option>
+                      <option value="ongoing">Ongoing / Retainer</option>
+                    </select>
+                  </div>
+
+                  <FormNav step={2} onBack={() => setStep(1)} onNext={() => setStep(3)} canProceed={!!projectType && !!industry} />
                 </div>
               )}
 
-              {/* ── STEP 3: Scope & Budget ── */}
+              {/* ── STEP 3: Final Details ── */}
               {step === 3 && (
-                <div className="animate-[stepIn_0.4s_ease_both]">
-                  <h2 className="font-serif font-light tracking-[-0.025em] leading-[.97] text-ink mb-3" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>
-                    Scope &amp; <em className="italic text-gold">investment.</em>
-                  </h2>
-                  <p className="text-[15px] font-light text-muted leading-[1.65] mb-12 max-w-[480px]">
-                    There are no wrong answers here. Budget transparency helps us propose the right team structure and engagement model for your goals.
-                  </p>
-
-                  {/* Timeline */}
-                  <div className="mb-7">
-                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      Target timeline <span className="text-gold">*</span>
-                    </label>
-                    <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
-                      {timelines.map((t) => (
-                        <OptionCard key={t.value} {...t} selected={timeline === t.value} onSelect={() => setTimeline(t.value)} />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Budget slider */}
-                  <div className="mb-7">
-                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      Estimated project investment <span className="text-gold">*</span>
-                    </label>
-                    <div className="text-center mb-8">
-                      <div className="font-serif font-semibold text-[64px] max-md:text-[48px] max-sm:text-[36px] tracking-[-0.03em] text-ink leading-none">
-                        {budgetLabels[budget].display}
-                      </div>
-                      <div className="text-[12px] font-normal tracking-[0.12em] uppercase text-muted mt-1.5">
-                        Estimated Budget
-                      </div>
-                      <div className="text-[13px] font-light text-gold italic mt-2">
-                        {budgetLabels[budget].context}
-                      </div>
-                    </div>
-                    <input
-                      type="range"
-                      min={0}
-                      max={10}
-                      value={budget}
-                      onChange={(e) => setBudget(Number(e.target.value))}
-                      className="w-full mb-4"
-                      style={{ accentColor: "#18160f" }}
-                    />
-                    <div className="flex justify-between text-[11px] text-muted tracking-[0.04em]">
-                      <span>$25K</span><span>$100K</span><span>$250K</span><span>$500K+</span>
-                    </div>
-                  </div>
-
-                  {/* Engagement model */}
-                  <div className="mb-7">
-                    <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                      Preferred engagement model{" "}
-                      <span className="text-[11px] font-light normal-case tracking-normal text-muted">(optional, we can advise)</span>
-                    </label>
-                    <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
-                      {engagements.map((e) => (
-                        <OptionCard key={e.value} value={e.value} title={e.title} desc={e.desc} selected={engagement === e.value} onSelect={() => setEngagement(e.value)} />
-                      ))}
-                    </div>
-                  </div>
-
-                  <FormNav step={3} onBack={() => setStep(2)} onNext={() => setStep(4)} canProceed={!!timeline} />
-                </div>
-              )}
-
-              {/* ── STEP 4: Final Details ── */}
-              {step === 4 && (
                 <div className="animate-[stepIn_0.4s_ease_both]">
                   <h2 className="font-serif font-light tracking-[-0.025em] leading-[.97] text-ink mb-3" style={{ fontSize: "clamp(32px, 4vw, 48px)" }}>
                     Almost <em className="italic text-gold">there.</em>
@@ -541,26 +415,19 @@ export default function StartProjectForm() {
                     A few final questions so we can prepare a meaningful, personalised response, not a boilerplate reply.
                   </p>
 
-                  {/* Source */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">How did you find us?</label>
                     <select
                       className={inputCls + " appearance-none"}
                       value={source}
                       onChange={(e) => setSource(e.target.value)}
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239b9690' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right 16px center",
-                        paddingRight: "40px",
-                      }}
+                      style={selectStyle}
                     >
                       <option value="" disabled>Select one</option>
                       {["Google / Search","LinkedIn","Referral from a colleague","Industry event or conference","Clutch or G2","Blog or article","Other"].map((o) => <option key={o}>{o}</option>)}
                     </select>
                   </div>
 
-                  {/* Prior agency experience */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">Have you worked with a software agency before?</label>
                     <div className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
@@ -573,7 +440,6 @@ export default function StartProjectForm() {
                     </div>
                   </div>
 
-                  {/* Additional info */}
                   <div className="mb-7">
                     <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">Anything else you&apos;d like us to know?</label>
                     <textarea
@@ -585,7 +451,6 @@ export default function StartProjectForm() {
                     />
                   </div>
 
-                  {/* Highlight box */}
                   <div className="bg-[rgba(184,151,90,0.08)] border border-[rgba(184,151,90,0.25)] px-6 py-5 mb-10">
                     <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold mb-1.5">What happens next</div>
                     <p className="text-[13px] font-light text-body-text leading-[1.6]">
@@ -596,7 +461,7 @@ export default function StartProjectForm() {
                   {submitError && (
                     <p className="text-[13px] text-red-500 mt-4">{submitError}</p>
                   )}
-                  <FormNav step={4} onBack={() => setStep(3)} onNext={handleSubmit} canProceed={!!email && !submitting} isSubmit submitting={submitting} />
+                  <FormNav step={3} onBack={() => setStep(2)} onNext={handleSubmit} canProceed={!!email && !submitting} isSubmit submitting={submitting} />
                 </div>
               )}
             </>
@@ -612,20 +477,6 @@ export default function StartProjectForm() {
               <p className="text-[16px] font-light text-muted leading-[1.75] max-w-[480px] mx-auto mb-10">
                 We&apos;ve received your submission and will review it personally. Expect a response within one business day. No automation, just a real conversation.
               </p>
-
-              {/* Timeline */}
-              <div className="flex border border-rule mb-10 max-sm:flex-col">
-                {[
-                  { time: "~24h", label: "First response" },
-                  { time: "~48h", label: "Intro call booked" },
-                  { time: "~1wk", label: "Proposal sent" },
-                ].map((t) => (
-                  <div key={t.label} className="flex-1 py-6 px-5 border-r border-rule last:border-r-0 text-center max-sm:border-r-0 max-sm:border-b last:max-sm:border-b-0">
-                    <div className="font-serif text-[28px] font-semibold text-gold tracking-[-0.01em]">{t.time}</div>
-                    <div className="text-[11px] tracking-[0.1em] uppercase text-muted mt-1">{t.label}</div>
-                  </div>
-                ))}
-              </div>
 
               <Link
                 href="/"

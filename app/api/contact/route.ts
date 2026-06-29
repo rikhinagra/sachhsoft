@@ -9,12 +9,9 @@ const contactSchema = z.object({
   phone:          z.string().optional(),
   company:        z.string().optional(),
   role:           z.string().optional(),
-  orgType:        z.string().optional(),
   industry:       z.string().optional(),
   projectType:    z.string().optional(),
   timeline:       z.string().optional(),
-  engagement:     z.string().optional(),
-  budget:         z.string().optional(),
   description:    z.string().optional(),
   priorAgency:    z.string().optional(),
   additionalInfo: z.string().optional(),
@@ -33,15 +30,12 @@ function formatTelegramMessage(d: Record<string, string>) {
 
 🏗 <b>Project Type:</b> ${d.projectType || "—"}
 🏭 <b>Industry:</b> ${d.industry || "—"}
-📋 <b>Engagement:</b> ${d.engagement || "—"}
-💰 <b>Budget:</b> ${d.budget || "—"}
 ⏰ <b>Timeline:</b> ${d.timeline || "—"}
 
 📝 <b>Description:</b>
 ${d.description || "—"}
 
-🔍 <b>Heard From:</b> ${d.heardFrom || "—"}
-🏛 <b>Org Type:</b> ${d.orgType || "—"}`;
+🔍 <b>Heard From:</b> ${d.heardFrom || "—"}`;
 }
 
 export async function POST(req: NextRequest) {
