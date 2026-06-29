@@ -106,29 +106,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns */}
-          <div className="flex gap-10 flex-wrap max-md:gap-8">
-            {Object.entries(footerLinks).map(([col, links]) => (
-              <div key={col}>
-                <div className="text-[10px] font-medium tracking-[0.2em] uppercase text-white/25 mb-4">
-                  {col}
-                </div>
-                {links.map((link) => {
-                  const isExternal = link.href.startsWith("http");
-                  return (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-                      className="block text-[13px] font-light text-white/50 no-underline mb-2.5 tracking-[0.02em] hover:text-white transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Bottom row */}
@@ -137,13 +114,15 @@ export default function Footer() {
             © {year} SACHHSOFT. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-[11px] font-light tracking-[0.12em] uppercase text-white/20">
+            <Link href="https://www.einpresswire.com/press-releases/report/RhKMk_DyAP--KOt-" target="_blank" rel="noopener noreferrer" className="no-underline hover:text-white/50 transition-colors">
+              Press
+            </Link>
             <Link href="/privacy" className="no-underline hover:text-white/50 transition-colors">
               Privacy
             </Link>
             <Link href="/terms" className="no-underline hover:text-white/50 transition-colors">
               Terms
             </Link>
-            <span>Global</span>
           </div>
         </div>
       </div>
