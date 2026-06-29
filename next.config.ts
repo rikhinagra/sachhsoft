@@ -23,7 +23,7 @@ const securityHeaders = [
       // Fonts: self + Google Fonts CDN
       "font-src 'self' fonts.gstatic.com data:",
       // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos)
-      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net",
+      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com",
       // Videos: self + Webflow CDN (hero video)
       "media-src 'self' cdn.prod.website-files.com",
       // API calls: self + Google Apps Script (form submission)
@@ -41,6 +41,13 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   // Hide "X-Powered-By: Next.js" header from hackers
   poweredByHeader: false,
+
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn-images-1.medium.com" },
+      { protocol: "https", hostname: "miro.medium.com" },
+    ],
+  },
 
   async headers() {
     return [

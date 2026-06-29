@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fetchMediumArticles } from "@/lib/medium";
 import BlogGrid from "@/components/blog/BlogGrid";
 
 export const metadata: Metadata = {
@@ -20,7 +21,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const articles = await fetchMediumArticles(10);
+
   return (
     <main>
       {/* Hero */}
@@ -51,7 +54,7 @@ export default function BlogPage() {
       {/* Blog Grid */}
       <section className="bg-off py-[80px] px-16 max-lg:px-8 max-md:px-6 max-md:py-14">
         <div className="max-w-[1280px] mx-auto">
-          <BlogGrid />
+          <BlogGrid articles={articles} />
         </div>
       </section>
 
