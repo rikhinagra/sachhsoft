@@ -24,7 +24,7 @@ function ArticleCard({
 
   return (
     <article
-      className={`group bg-white border border-rule flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)]${isHiddenOnDesktop ? " lg:hidden" : ""}`}
+      className={`group bg-white border border-rule flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)]${isHiddenOnDesktop ? " lg:hidden" : ""}`}
     >
       <div className="overflow-hidden aspect-[16/9] bg-[#f0eeea] relative">
         <Image
