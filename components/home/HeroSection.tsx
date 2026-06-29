@@ -140,7 +140,7 @@ export default function HeroSection() {
               Start a Project
             </Link>
             <Link
-              href="#work"
+              href="/case-studies"
               className="text-[13px] font-normal text-white/60 no-underline flex items-center gap-2 hover:text-white hover:gap-3.5 transition-all duration-200"
             >
               View our work <span className="text-lg leading-none">→</span>
