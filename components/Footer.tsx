@@ -56,6 +56,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Case Studies", href: "/case-studies" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
+    { label: "Press", href: "https://www.einpresswire.com/press-releases/report/RhKMk_DyAP--KOt-" },
   ],
   Industries: [
     { label: "HealthTech", href: "/industries#healthcare" },
@@ -112,15 +113,19 @@ export default function Footer() {
                 <div className="text-[10px] font-medium tracking-[0.2em] uppercase text-white/25 mb-4">
                   {col}
                 </div>
-                {links.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="block text-[13px] font-light text-white/50 no-underline mb-2.5 tracking-[0.02em] hover:text-white transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {links.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+                  return (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                      className="block text-[13px] font-light text-white/50 no-underline mb-2.5 tracking-[0.02em] hover:text-white transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
               </div>
             ))}
           </div>
