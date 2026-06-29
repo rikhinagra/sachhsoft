@@ -7,30 +7,69 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only on devices with a precise pointer (mouse/trackpad), not touch
     if (!window.matchMedia("(pointer: fine)").matches) return;
 
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    // Show cursors
     dot.style.display = "block";
     ring.style.display = "block";
 
     let dotX = 0, dotY = 0;
     let ringX = 0, ringY = 0;
     let frame: number;
+    let isOnDark = false;
+    let isHovering = false;
 
+    function applyColors() {
+      if (isHovering) return;
+      if (isOnDark) {
+        dot.style.background = "#ffffff";
+        ring.style.borderColor = "rgba(255,255,255,0.4)";
+      } else {
+        dot.style.background = "var(--ink)";
+        ring.style.borderColor = "rgba(24,22,15,0.35)";
+      }
+    }
+
+    function checkBackground(x: number, y: number) {
+      const el = document.elementFromPoint(x, y);
+      if (!el) return;
+      let node: Element | null = el;
+      while (node && node !== document.body) {
+        const bg = getComputedStyle(node).backgroundColor;
+        if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+          const match = bg.match(/\d+/g);
+          if (match) {
+            const [r, g, b] = match.map(Number);
+            const luminance = (r * 299 + g * 587 + b * 114) / 1000;
+            const wasDark = isOnDark;
+            isOnDark = luminance < 128;
+            if (wasDark !== isOnDark) applyColors();
+          }
+          return;
+        }
+        node = node.parentElement;
+      }
+      const wasDark = isOnDark;
+      isOnDark = false;
+      if (wasDark !== isOnDark) applyColors();
+    }
+
+    let checkCounter = 0;
     const onMove = (e: MouseEvent) => {
       dotX = e.clientX;
       dotY = e.clientY;
+      checkCounter++;
+      if (checkCounter % 6 === 0) {
+        checkBackground(e.clientX, e.clientY);
+      }
     };
 
     document.addEventListener("mousemove", onMove, { passive: true });
 
     const animate = () => {
-      // Ring lags slightly behind dot for the trailing effect
       ringX += (dotX - ringX) * 0.12;
       ringY += (dotY - ringY) * 0.12;
 
@@ -43,8 +82,8 @@ export default function CustomCursor() {
     };
     frame = requestAnimationFrame(animate);
 
-    // Scale up ring on interactive elements
     const onEnter = () => {
+      isHovering = true;
       ring.style.width = "44px";
       ring.style.height = "44px";
       ring.style.borderColor = "var(--gold)";
@@ -53,12 +92,12 @@ export default function CustomCursor() {
       dot.style.height = "8px";
     };
     const onLeave = () => {
+      isHovering = false;
       ring.style.width = "32px";
       ring.style.height = "32px";
-      ring.style.borderColor = "rgba(24,22,15,0.35)";
-      dot.style.background = "var(--ink)";
       dot.style.width = "6px";
       dot.style.height = "6px";
+      applyColors();
     };
 
     const interactives = document.querySelectorAll("a, button");
@@ -79,13 +118,11 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Dot */}
       <div
         ref={dotRef}
         style={{ display: "none" }}
         className="fixed z-[9999] w-[6px] h-[6px] bg-ink rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-[width,height,background] duration-200"
       />
-      {/* Ring */}
       <div
         ref={ringRef}
         style={{ display: "none" }}
