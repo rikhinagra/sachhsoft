@@ -23,7 +23,7 @@ export default function CustomCursor() {
     let isHovering = false;
 
     function applyColors() {
-      if (isHovering) return;
+      if (isHovering || !dot || !ring) return;
       if (isOnDark) {
         dot.style.background = "#ffffff";
         ring.style.borderColor = "rgba(255,255,255,0.4)";
