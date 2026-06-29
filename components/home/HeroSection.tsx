@@ -89,7 +89,7 @@ export default function HeroSection() {
             style={{ animation: "fadeUp 0.8s ease 0.2s both" }}
           >
             <span className="block w-7 h-px bg-gold" />
-            Bespoke Software · Chicago &amp; Global
+            Bespoke Software · Global
           </div>
 
           {/* H1 — the most important SEO element */}

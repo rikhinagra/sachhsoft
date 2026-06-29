@@ -87,7 +87,7 @@ export default function Footer() {
               Bespoke Software. Built for What&apos;s Next.
             </div>
             <div className="text-[11px] font-light text-white/20 mt-1 tracking-[0.06em]">
-              Chicago · Global · Since 2015
+              Global · Since 2015
             </div>
             {/* Social icons */}
             <div className="flex items-center gap-4 mt-5">
@@ -143,7 +143,7 @@ export default function Footer() {
             <Link href="/terms" className="no-underline hover:text-white/50 transition-colors">
               Terms
             </Link>
-            <span>Chicago · Global</span>
+            <span>Global</span>
           </div>
         </div>
       </div>

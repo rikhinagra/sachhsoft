@@ -24,15 +24,15 @@ const cormorant = Cormorant({
 
 export const metadata: Metadata = {
   title: {
-    default: "SACHHSOFT — Bespoke Software Development | Chicago & Global",
+    default: "SACHHSOFT — Bespoke Software Development | Global",
     template: "%s | SACHHSOFT",
   },
   description:
-    "SACHHSOFT builds bespoke custom software products for enterprise teams, mid-size companies, and startup founders. HealthTech, FinTech, E-Commerce, AI integration — from Chicago, delivered globally.",
+    "SACHHSOFT builds bespoke custom software products for enterprise teams, mid-size companies, and startup founders. HealthTech, FinTech, E-Commerce, AI integration — delivered globally.",
   keywords: [
     "custom software development",
     "bespoke software company",
-    "software development Chicago",
+    "software development company",
     "HealthTech development company",
     "FinTech software development",
     "enterprise software development",

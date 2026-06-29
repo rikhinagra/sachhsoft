@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "1. Who We Are",
-    content: `SACHHSOFT is a software design and development company headquartered in Chicago, Illinois, United States. We build bespoke digital products for startups, scale-ups, and enterprises across a range of industries.
+    content: `SACHHSOFT is a software design and development company. We build bespoke digital products for startups, scale-ups, and enterprises across a range of industries.
 
 When this Privacy Policy refers to "SACHHSOFT", "we", "us", or "our", it means SACHHSOFT and its team. When it refers to "you" or "your", it means any person who visits our website, contacts us, or engages with our services.`,
   },
@@ -82,7 +82,6 @@ We encourage you to review this policy periodically to stay informed about how w
     content: `If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please contact us at:
 
 SACHHSOFT
-Chicago, Illinois, United States
 Email: hello@sachhsoft.com`,
   },
 ];

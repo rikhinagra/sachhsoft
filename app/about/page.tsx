@@ -8,10 +8,10 @@ import { Gem, Handshake, Zap, MessageSquare } from "lucide-react";
 export const metadata: Metadata = {
   title: "About — Who We Are",
   description:
-    "SACHHSOFT is a bespoke software development studio founded in Chicago. We build exceptional digital products for enterprise teams, mid-size companies, and startup founders — globally.",
+    "SACHHSOFT is a bespoke software development studio. We build exceptional digital products for enterprise teams, mid-size companies, and startup founders — globally.",
   alternates: { canonical: "https://sachhsoft.com/about" },
   openGraph: {
-    title: "About SACHHSOFT — Bespoke Software Studio, Chicago",
+    title: "About SACHHSOFT — Bespoke Software Studio",
     description: "60 expert engineers. 15+ companies launched. 1M+ users maintained. We build software that moves markets.",
     url: "https://sachhsoft.com/about",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
@@ -82,9 +82,9 @@ export default function AboutPage() {
               <em className="italic text-gold-lt">changes everything.</em>
             </h1>
             <p className="text-[17px] font-light text-white/50 leading-[1.8] mt-8 max-w-[580px]">
-              We&apos;re a bespoke software studio founded in Chicago, building
-              the digital products that ambitious companies use to compete,
-              grow, and lead their industries.
+              We&apos;re a bespoke software studio building the digital
+              products that ambitious companies use to compete, grow, and
+              lead their industries.
             </p>
           </RevealWrapper>
         </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 urgency while delivering enterprise-grade craft.
               </p>
               <p>
-                We started in Chicago, taking on projects that demanded both
+                We started by taking on projects that demanded both
                 strategic thinking and exceptional execution. HealthTech
                 platforms that had to be HIPAA-compliant on day one. FinTech
                 systems that processed millions in transactions. Marketplaces
@@ -132,34 +132,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Right — callout */}
-          <div className="flex flex-col gap-6">
-            <div className="bg-ink p-10 max-md:p-8">
-              <div className="font-serif text-[72px] font-light text-gold leading-none tracking-[-0.04em]">
-                2017
-              </div>
-              <div className="text-[12px] font-medium tracking-[0.14em] uppercase text-white/40 mt-2 mb-6">
-                Year Founded
-              </div>
-              <p className="text-[14px] font-light text-white/60 leading-[1.7]">
-                From a single client in Chicago to a global studio trusted
-                by companies across North America, Europe, the Middle East,
-                and APAC.
-              </p>
-            </div>
-            <div className="bg-off border border-rule p-10 max-md:p-8">
-              <div className="font-serif text-[13px] italic text-ink/60 leading-[1.7] mb-5">
-                &ldquo;The standard is not what the client expects. It&apos;s
-                what we know is possible.&rdquo;
-              </div>
-              <div className="text-[12px] font-medium tracking-[0.08em] text-ink">
-                Rikhi Pal Singh
-              </div>
-              <div className="text-[11px] font-light text-muted mt-0.5 tracking-[0.04em]">
-                Co-Founder & CEO
-              </div>
-            </div>
-          </div>
+          {/* Right — intentionally left empty for future content */}
+          <div />
         </RevealWrapper>
       </section>
 
@@ -302,7 +276,7 @@ export default function AboutPage() {
           </blockquote>
           <div className="w-8 h-px bg-rule mx-auto my-8" />
           <div className="text-[13px] font-normal tracking-[0.06em] text-ink">
-            Sachhsoft — Chicago &amp; Global
+            Sachhsoft — Global
           </div>
         </RevealWrapper>
       </section>

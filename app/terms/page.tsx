@@ -69,7 +69,7 @@ Upon termination of an engagement, payment for all work completed up to the date
   },
   {
     title: "11. Governing Law",
-    content: `These Terms of Service are governed by and construed in accordance with the laws of the State of Illinois, United States, without regard to conflict of law principles. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts located in Chicago, Illinois.`,
+    content: `These Terms of Service are governed by and construed in accordance with applicable laws. Any disputes arising under these terms shall be resolved in accordance with the agreed-upon dispute resolution procedures.`,
   },
   {
     title: "12. Changes to These Terms",
@@ -80,7 +80,6 @@ Upon termination of an engagement, payment for all work completed up to the date
     content: `If you have any questions about these Terms of Service, please contact us at:
 
 SACHHSOFT
-Chicago, Illinois, United States
 Email: hello@sachhsoft.com`,
   },
 ];

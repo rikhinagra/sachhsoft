@@ -6,15 +6,9 @@ export function organizationSchema() {
     url: "https://sachhsoft.com",
     logo: "https://sachhsoft.com/logo.png",
     description:
-      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Based in Chicago, serving clients globally.",
+      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Serving clients globally.",
     foundingDate: "2015",
     numberOfEmployees: { "@type": "QuantitativeValue", value: 60 },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chicago",
-      addressRegion: "IL",
-      addressCountry: "US",
-    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
@@ -92,20 +86,9 @@ export function localBusinessSchema() {
     logo: "https://sachhsoft.com/logo.png",
     image: "https://sachhsoft.com/og-image.jpg",
     description:
-      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Based in Chicago, serving clients globally.",
+      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Serving clients globally.",
     telephone: "+1-848-468-8141",
     email: "hello@sachhsoft.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chicago",
-      addressRegion: "IL",
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 41.8781,
-      longitude: -87.6298,
-    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
