@@ -122,7 +122,7 @@ export default function StartProjectForm() {
   const [source, setSource] = useState("");
   const [priorAgency, setPriorAgency] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
-  const [ndaRequired, setNdaRequired] = useState(false);
+  const ndaRequired = false;
 
   const proofPoints: { icon: LucideIcon; title: string; desc: string }[] = [
     { icon: Gem,       title: "Fully Bespoke. No Templates.", desc: "Every line of code is written for your specific domain, users, and growth trajectory." },
@@ -161,12 +161,15 @@ export default function StartProjectForm() {
       };
 
       // 1 — Google Sheets + Email (Apps Script, proven working)
-      await fetch(process.env.NEXT_PUBLIC_APPS_SCRIPT_URL!, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const appsScriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+      if (appsScriptUrl) {
+        await fetch(appsScriptUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      }
 
       // 2 — Telegram notification (server-side API route)
       fetch("/api/contact", {
@@ -353,7 +356,7 @@ export default function StartProjectForm() {
                       </div>
                       <div>
                         <label className="block text-[11px] font-medium tracking-[0.14em] uppercase text-muted mb-2">
-                          Last Name <span className="text-gold">*</span>
+                          Last Name
                         </label>
                         <input type="text" className={inputCls} placeholder="Mitchell" value={lastName} onChange={(e) => setLastName(e.target.value)} />
                       </div>
@@ -582,14 +585,6 @@ export default function StartProjectForm() {
                       onChange={(e) => setAdditionalInfo(e.target.value)}
                     />
                   </div>
-
-                  {/* NDA */}
-                  <label className="flex items-start gap-3 px-[18px] py-4 border border-rule cursor-pointer hover:border-gold/50 hover:bg-[rgba(184,151,90,0.04)] transition-all mb-10">
-                    <input type="checkbox" className="mt-1 flex-shrink-0" style={{ accentColor: "#b8975a" }} checked={ndaRequired} onChange={(e) => setNdaRequired(e.target.checked)} />
-                    <div className="text-[13px] font-light text-body-text leading-[1.55]">
-                      <strong className="font-medium text-ink">I require an NDA</strong> before sharing full project details. Please send one before our first call.
-                    </div>
-                  </label>
 
                   {/* Highlight box */}
                   <div className="bg-[rgba(184,151,90,0.08)] border border-[rgba(184,151,90,0.25)] px-6 py-5 mb-10">

@@ -4,7 +4,7 @@ import { z } from "zod";
 // Strict schema — defines exactly what data is valid
 const contactSchema = z.object({
   firstName:      z.string().min(1),
-  lastName:       z.string().min(1),
+  lastName:       z.string().optional(),
   email:          z.string().email(),
   phone:          z.string().optional(),
   company:        z.string().optional(),
