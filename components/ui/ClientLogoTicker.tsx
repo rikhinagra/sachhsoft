@@ -28,7 +28,7 @@ const SixteenNineLogo = () => (
 const clients: { name: string; url?: string; svg?: React.ReactNode; dark?: boolean; invert?: boolean; large?: boolean }[] = [
   { name: "RenewRx",    url: "https://cdn.prod.website-files.com/677eb93874391ef718526bb9/6900554b1cf1f6b0feed728e_renewrx-r-logo.svg" },
   { name: "Databahn",   url: "https://cdn.prod.website-files.com/67eb571d0fe797071c2c2759/67ebaa6ba00e7b767d1db02e_logo.avif", invert: true },
-  { name: "Redline Lab",url: "https://www.redlinelab.io/assets/REDLINELAB-logo-600-100-D8pVPWFE.png" },
+  { name: "Redline Lab",url: "/logos/redlinelab.png" },
   { name: "Rizzarr",    url: "https://d15o1r2675r1cy.cloudfront.net/static/images/rizzarr-logo-updated.png" },
   { name: "SixteenNine",svg: <SixteenNineLogo /> },
   { name: "Ainstinct",  svg: <AinstinctLogo /> },
