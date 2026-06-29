@@ -122,7 +122,7 @@ export default function StartProjectForm() {
   const [source, setSource] = useState("");
   const [priorAgency, setPriorAgency] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
-  const ndaRequired = false;
+
 
   const proofPoints: { icon: LucideIcon; title: string; desc: string }[] = [
     { icon: Gem,       title: "Fully Bespoke. No Templates.", desc: "Every line of code is written for your specific domain, users, and growth trajectory." },
@@ -155,7 +155,6 @@ export default function StartProjectForm() {
         description: projectDesc,
         priorAgency,
         additionalInfo,
-        ndaRequired,
         heardFrom: source,
         website: honeypot,
       };

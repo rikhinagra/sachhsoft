@@ -18,7 +18,6 @@ const contactSchema = z.object({
   description:    z.string().optional(),
   priorAgency:    z.string().optional(),
   additionalInfo: z.string().optional(),
-  ndaRequired:    z.union([z.boolean(), z.string()]).optional(),
   heardFrom:      z.string().optional(),
   website:        z.string().optional(), // honeypot field
 });
@@ -42,7 +41,6 @@ function formatTelegramMessage(d: Record<string, string>) {
 ${d.description || "—"}
 
 🔍 <b>Heard From:</b> ${d.heardFrom || "—"}
-🔒 <b>NDA Required:</b> ${d.ndaRequired || "No"}
 🏛 <b>Org Type:</b> ${d.orgType || "—"}`;
 }
 
