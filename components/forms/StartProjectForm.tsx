@@ -113,6 +113,7 @@ export default function StartProjectForm() {
       }).catch(() => {});
 
       setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       setSubmitError("Something went wrong. Please email us at hello@sachhsoft.com");
     } finally {
