@@ -32,14 +32,13 @@ export default function AISection() {
             className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
             style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
           >
-            We Don&apos;t Just Use AI.<br />
-            We <em className="italic text-gold-lt">Build With It.</em>
+            We engineer AI for systems
+            <br /><em className="italic text-gold-lt">people depend on.</em>
           </h2>
           <p className="text-[16px] font-light text-white/60 leading-[1.8] mt-7">
-            Every engineer at SACHHSOFT ships with AI-augmented tooling:
-            Copilot-assisted code, automated test generation, AI-driven
-            architecture review. The result: dramatically faster sprints, fewer
-            regressions, and codebases designed to scale from day one.
+            We build LLM, RAG, and agentic systems into products in health,
+            finance, and legal where accuracy and compliance aren&apos;t optional.
+            Designed, reviewed, and tested like the production systems they are.
           </p>
           <div className="flex flex-wrap gap-2 mt-10">
             {pills.map((pill) => (
