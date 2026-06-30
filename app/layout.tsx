@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant, Outfit } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -7,17 +7,10 @@ import CustomCursor from "@/components/CustomCursor";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import { organizationSchema, serviceSchema, localBusinessSchema, webSiteSchema } from "@/lib/schema";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600"],
-  display: "swap",
-});
-
-const cormorant = Cormorant({
+const instrumentSerif = Instrument_Serif({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["400"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -92,8 +85,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${instrumentSerif.variable}`}>
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

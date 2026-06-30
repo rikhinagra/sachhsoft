@@ -21,7 +21,7 @@ export default function TestimonialSection() {
             <blockquote
               id="testimonial-heading"
               className="font-serif text-ink font-light italic leading-[1.5] tracking-[-0.01em]"
-              style={{ fontSize: "clamp(22px, 2.5vw, 30px)" }}
+              style={{ fontSize: "clamp(18px, 1.8vw, 26px)" }}
             >
               Sachhsoft didn&apos;t just build our product. They brought
               strategic clarity to every decision. We launched in 14 weeks,
@@ -69,7 +69,7 @@ export default function TestimonialSection() {
                   { num: "99.9%", label: "Uptime SLA" },
                 ].map((stat) => (
                   <div key={stat.label}>
-                    <div className="font-serif text-[40px] font-semibold text-ink tracking-[-0.02em] leading-none">
+                    <div className="font-serif text-[32px] font-semibold text-ink tracking-[-0.02em] leading-none">
                       {stat.num}
                     </div>
                     <div className="text-[11px] font-normal tracking-[0.12em] uppercase text-muted mt-1">

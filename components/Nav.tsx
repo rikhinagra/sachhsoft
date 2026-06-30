@@ -102,8 +102,8 @@ export default function Nav() {
           href="/start-a-project"
           className="text-[12px] font-medium tracking-[0.12em] uppercase no-underline px-[20px] py-[11px] whitespace-nowrap transition-colors duration-200 max-md:hidden"
           style={{
-            color: isDark || (scrolled && isHome) ? "#18160f" : "#ffffff",
-            background: isDark || (scrolled && isHome) ? "#b8975a" : "#18160f",
+            color: "#ffffff",
+            background: "#0E6CFB",
           }}
         >
           Start a Project

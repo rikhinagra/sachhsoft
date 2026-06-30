@@ -39,8 +39,8 @@ export default function ReachSection() {
           </div>
           <h2
             id="reach-heading"
-            className="font-serif font-light text-white leading-none tracking-[-0.025em]"
-            style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
+            className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(26px, 3.5vw, 50px)" }}
           >
             Numbers that speak<br />
             <em className="italic text-gold-lt">louder than words.</em>
@@ -52,8 +52,8 @@ export default function ReachSection() {
             <StaggerItem key={i} className="py-12 px-8 text-center border-b border-white/10 border-r last:border-r-0 max-lg:px-5 max-md:border-r-0 max-md:py-8">
               <CountUp
                 value={s.value}
-                className="font-serif font-light text-white leading-none tracking-[-0.04em] mb-3 block"
-                style={{ fontSize: "clamp(52px, 7vw, 96px)" }}
+                className="font-serif font-light text-white leading-[1.05] tracking-[-0.03em] mb-3 block"
+                style={{ fontSize: "clamp(38px, 5vw, 70px)" }}
               />
               <div className="text-[12px] font-medium tracking-[0.14em] uppercase text-gold mb-3">
                 {s.label}

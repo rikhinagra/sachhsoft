@@ -3,16 +3,16 @@
 /* ─── TAILWIND v4 THEME ─── */
 @theme inline {
   --color-ink:       #18160f;
-  --color-gold:      #b8975a;
-  --color-gold-lt:   #d4b47e;
+  --color-gold:      #0E6CFB;
+  --color-gold-lt:   #5a9dfc;
   --color-off:       #f8f7f5;
   --color-smoke:     #f0eeea;
   --color-rule:      #e2dfd8;
   --color-muted:     #9b9690;
   --color-body-text: #4a4740;
 
-  --font-sans:  var(--font-outfit), "Outfit", ui-sans-serif, sans-serif;
-  --font-serif: var(--font-cormorant), "Cormorant", ui-serif, serif;
+  --font-sans:  "Satoshi", ui-sans-serif, sans-serif;
+  --font-serif: var(--font-cormorant), "Instrument Serif", ui-serif, serif;
 }
 
 /* ─── CSS CUSTOM PROPERTIES ─── */
@@ -24,9 +24,9 @@
   --muted:   #9b9690;
   --body-c:  #4a4740;
   --ink:     #18160f;
-  --gold:    #b8975a;
-  --gold-lt: #d4b47e;
-  --gold-bg: rgba(184, 151, 90, 0.08);
+  --gold:    #0E6CFB;
+  --gold-lt: #5a9dfc;
+  --gold-bg: rgba(14, 108, 251, 0.08);
 }
 
 html {
@@ -38,7 +38,7 @@ body {
   background: #ffffff;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

@@ -8,8 +8,8 @@ export default function CTASection() {
         {/* Left */}
         <div>
           <h2
-            className="font-serif font-light leading-none tracking-[-0.025em] text-white"
-            style={{ fontSize: "clamp(36px, 5.5vw, 78px)" }}
+            className="font-serif font-light leading-[1.05] tracking-[-0.02em] text-white"
+            style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
           >
             Ready to Build<br />
             Something <em className="italic text-gold-lt">Exceptional?</em>
@@ -25,7 +25,7 @@ export default function CTASection() {
         <div className="flex flex-col gap-4 items-end max-lg:items-start">
           <Link
             href="/start-a-project"
-            className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+            className="text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
           >
             Start a Project
           </Link>

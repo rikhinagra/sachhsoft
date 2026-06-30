@@ -94,9 +94,9 @@ export default function HeroSection() {
 
           {/* H1 — the most important SEO element */}
           <h1
-            className="font-serif font-light leading-[0.93] tracking-[-0.03em] text-white mb-9"
+            className="font-serif font-light leading-[1.05] tracking-[-0.03em] text-white mb-9"
             style={{
-              fontSize: "clamp(44px, 8.5vw, 118px)",
+              fontSize: "clamp(34px, 6vw, 82px)",
               animation: "fadeUp 0.9s ease 0.35s both",
             }}
           >
@@ -135,7 +135,7 @@ export default function HeroSection() {
           >
             <Link
               href="/start-a-project"
-              className="text-[12px] font-semibold tracking-[0.16em] uppercase text-ink bg-gold px-11 py-4 no-underline hover:bg-gold-lt transition-all duration-200 hover:tracking-[0.2em]"
+              className="text-[12px] font-semibold tracking-[0.16em] uppercase text-white bg-gold px-11 py-4 no-underline hover:bg-gold-lt transition-all duration-200 hover:tracking-[0.2em]"
             >
               Start a Project
             </Link>
@@ -158,7 +158,7 @@ export default function HeroSection() {
               key={s.label}
               className="py-5 border-b border-white/10 first:border-t first:border-white/10 max-lg:border-b-0 max-lg:border-t-0 max-lg:border-r max-lg:border-white/10 max-lg:last:border-r-0 max-lg:px-5 max-lg:py-4 max-md:border-r-0 max-md:border-b max-md:border-white/10 max-md:px-0 max-md:py-4"
             >
-              <div className="font-serif font-semibold leading-none tracking-[-0.02em] text-white text-[42px] max-md:text-[36px]">
+              <div className="font-serif font-semibold leading-[1.05] tracking-[-0.015em] text-white text-[34px] max-md:text-[36px]">
                 <CountUp value={s.num} />
                 <span className="text-gold-lt">{s.sup}</span>
               </div>
@@ -189,7 +189,7 @@ export default function HeroSection() {
             className="absolute w-full h-full"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, #b8975a, transparent)",
+                "linear-gradient(to bottom, transparent, #0E6CFB, transparent)",
               animation: "scrollDrop 1.8s ease infinite",
               top: "-100%",
             }}

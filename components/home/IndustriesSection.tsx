@@ -70,8 +70,8 @@ export default function IndustriesSection() {
         </div>
         <h2
           id="industries-heading"
-          className="font-serif font-light leading-none tracking-[-0.025em] text-ink"
-          style={{ fontSize: "clamp(36px, 5.5vw, 78px)" }}
+          className="font-serif font-light leading-[1.05] tracking-[-0.02em] text-ink"
+          style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
         >
           Deep Domain<br />
           <em className="italic text-gold">Expertise.</em>

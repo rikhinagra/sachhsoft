@@ -222,8 +222,8 @@ export default function CaseStudiesPage() {
               <span className="block w-6 h-px bg-gold/40" />
             </div>
             <h1
-              className="font-serif font-light text-white leading-none tracking-[-0.03em] max-w-[800px]"
-              style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em] max-w-[800px]"
+              style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
             >
               Results that speak
               <br />
@@ -277,7 +277,7 @@ export default function CaseStudiesPage() {
 
                 <h2
                   className="font-serif font-normal text-ink leading-[1.1] tracking-[-0.02em] mb-6"
-                  style={{ fontSize: "clamp(26px, 3.5vw, 48px)" }}
+                  style={{ fontSize: "clamp(20px, 2.5vw, 38px)" }}
                 >
                   {featured.headline}
                 </h2>
@@ -300,7 +300,7 @@ export default function CaseStudiesPage() {
 
                 <Link
                   href="/start-a-project"
-                  className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+                  className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
                 >
                   Start a Similar Project
                   <ArrowUpRight size={14} />
@@ -315,7 +315,7 @@ export default function CaseStudiesPage() {
                     className="p-10 border border-rule bg-off max-md:p-8"
                   >
                     <div
-                      className="font-serif font-light leading-none tracking-[-0.03em] mb-2"
+                      className="font-serif font-light leading-[1.05] tracking-[-0.02em] mb-2"
                       style={{ fontSize: "clamp(40px, 5vw, 64px)", color: featured.accent }}
                     >
                       {m.value}
@@ -380,7 +380,7 @@ export default function CaseStudiesPage() {
                   {/* Headline */}
                   <h3
                     className="font-serif font-normal text-ink leading-[1.2] tracking-[-0.02em] mb-5"
-                    style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
+                    style={{ fontSize: "clamp(16px, 1.5vw, 22px)" }}
                   >
                     {cs.headline}
                   </h3>
@@ -394,7 +394,7 @@ export default function CaseStudiesPage() {
                     {cs.metrics.map((m) => (
                       <div key={m.label}>
                         <div
-                          className="font-serif font-light leading-none tracking-[-0.02em] mb-1"
+                          className="font-serif font-light leading-[1.05] tracking-[-0.015em] mb-1"
                           style={{ fontSize: "clamp(22px, 2.5vw, 32px)", color: cs.accent }}
                         >
                           {m.value}
@@ -446,8 +446,8 @@ export default function CaseStudiesPage() {
         <RevealWrapper className="max-w-[1280px] mx-auto flex items-center justify-between gap-12 max-lg:flex-col max-lg:items-start max-lg:gap-10">
           <div>
             <h2
-              className="font-serif font-light text-white leading-none tracking-[-0.025em]"
-              style={{ fontSize: "clamp(30px, 4.5vw, 60px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(24px, 3.2vw, 48px)" }}
             >
               Ready to be our
               <br />
@@ -461,7 +461,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-col gap-4 items-end max-lg:items-start flex-shrink-0">
             <Link
               href="/start-a-project"
-              className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+              className="text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
             >
               Start a Project
             </Link>

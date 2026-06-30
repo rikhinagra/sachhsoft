@@ -27,10 +27,10 @@ export default function MarqueeSection() {
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="inline-flex items-center gap-9 px-9 text-[11px] font-medium tracking-[0.2em] uppercase text-ink"
+            className="inline-flex items-center gap-9 px-9 text-[11px] font-medium tracking-[0.2em] uppercase text-white"
           >
             {item}
-            <Diamond size={6} fill="currentColor" strokeWidth={0} className="text-ink/60 flex-shrink-0" />
+            <Diamond size={6} fill="currentColor" strokeWidth={0} className="text-white/60 flex-shrink-0" />
           </span>
         ))}
       </div>

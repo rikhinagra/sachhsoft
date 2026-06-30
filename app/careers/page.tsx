@@ -68,8 +68,8 @@ export default function CareersPage() {
               <span className="block w-6 h-px bg-gold/40" />
             </div>
             <h1
-              className="font-serif font-light text-white leading-none tracking-[-0.03em] max-w-[800px]"
-              style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em] max-w-[800px]"
+              style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
             >
               Build things that
               <br />
@@ -97,7 +97,7 @@ export default function CareersPage() {
                   <div className="w-10 h-px bg-gold mb-8" />
                   <h2
                     className="font-serif font-normal text-ink leading-[1.2] tracking-[-0.02em] mb-5"
-                    style={{ fontSize: "clamp(24px, 3vw, 38px)" }}
+                    style={{ fontSize: "clamp(20px, 2.2vw, 32px)" }}
                   >
                     No open roles right now.
                   </h2>
@@ -109,7 +109,7 @@ export default function CareersPage() {
                   <div className="inline-flex flex-col items-center">
                     <a
                       href="mailto:hello@sachhsoft.com"
-                      className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+                      className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-8 py-[16px] no-underline hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
                     >
                       Send Your CV
                       <ArrowUpRight size={14} />
@@ -157,7 +157,7 @@ export default function CareersPage() {
             </div>
             <h2
               className="font-serif font-normal text-ink leading-[1.1] tracking-[-0.02em] mb-16 max-w-[480px]"
-              style={{ fontSize: "clamp(28px, 3.5vw, 46px)" }}
+              style={{ fontSize: "clamp(22px, 2.5vw, 36px)" }}
             >
               Values we actually
               <br />
@@ -199,7 +199,7 @@ export default function CareersPage() {
                 </div>
                 <h2
                   className="font-serif font-normal text-ink leading-[1.1] tracking-[-0.02em]"
-                  style={{ fontSize: "clamp(28px, 3.5vw, 46px)" }}
+                  style={{ fontSize: "clamp(22px, 2.5vw, 36px)" }}
                 >
                   A place where
                   <br />
@@ -233,8 +233,8 @@ export default function CareersPage() {
         <RevealWrapper className="max-w-[1280px] mx-auto flex items-center justify-between gap-12 max-lg:flex-col max-lg:items-start max-lg:gap-10">
           <div>
             <h2
-              className="font-serif font-light text-white leading-none tracking-[-0.025em]"
-              style={{ fontSize: "clamp(30px, 4.5vw, 60px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(24px, 3.2vw, 48px)" }}
             >
               Think you belong here?
               <br />
@@ -250,7 +250,7 @@ export default function CareersPage() {
             <div className="inline-flex flex-col items-center">
               <a
                 href="mailto:hello@sachhsoft.com"
-                className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+                className="text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
               >
                 Send Your CV
               </a>

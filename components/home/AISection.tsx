@@ -29,8 +29,8 @@ export default function AISection() {
           </div>
           <h2
             id="ai-heading"
-            className="font-serif font-light text-white leading-none tracking-[-0.025em]"
-            style={{ fontSize: "clamp(36px, 5.5vw, 78px)" }}
+            className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
           >
             We Don&apos;t Just Use AI.<br />
             We <em className="italic text-gold-lt">Build With It.</em>
@@ -60,7 +60,7 @@ export default function AISection() {
               key={i}
               className="py-7 border-b border-white/8 first:border-t first:border-white/8 flex items-center justify-between gap-6"
             >
-              <div className="font-serif font-semibold text-[52px] text-gold-lt tracking-[-0.02em] leading-none flex-shrink-0 max-md:text-[42px] max-sm:text-[32px]">
+              <div className="font-serif font-semibold text-[32px] text-gold-lt tracking-[-0.02em] leading-none flex-shrink-0 max-md:text-[34px] max-sm:text-[32px]">
                 {m.val}
               </div>
               <div className="text-[13px] font-light text-white/50 text-right leading-[1.6] min-w-0 overflow-hidden">

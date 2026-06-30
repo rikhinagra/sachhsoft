@@ -38,8 +38,8 @@ export default function ServicesSection() {
           What We Build
         </div>
         <h2
-          className="font-serif font-light leading-none tracking-[-0.025em] text-ink"
-          style={{ fontSize: "clamp(36px, 5.5vw, 78px)" }}
+          className="font-serif font-light leading-[1.05] tracking-[-0.02em] text-ink"
+          style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
         >
           Full-Spectrum<br />
           <em className="italic text-gold">Engineering.</em>

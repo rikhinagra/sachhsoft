@@ -35,8 +35,8 @@ export default async function BlogPage() {
             <span className="block w-6 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-serif font-light text-white leading-none tracking-[-0.025em] max-w-[720px]"
-            style={{ fontSize: "clamp(36px, 5.5vw, 72px)" }}
+            className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em] max-w-[720px]"
+            style={{ fontSize: "clamp(28px, 4vw, 56px)" }}
           >
             We share what we&apos;re<br />
             <em className="italic text-gold-lt">thinking about.</em>
@@ -63,8 +63,8 @@ export default async function BlogPage() {
         <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-10 max-md:flex-col max-md:items-start">
           <div>
             <h2
-              className="font-serif font-light text-white leading-none tracking-[-0.02em]"
-              style={{ fontSize: "clamp(28px, 3.5vw, 48px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.015em]"
+              style={{ fontSize: "clamp(22px, 2.5vw, 38px)" }}
             >
               Ready to build something{" "}
               <em className="italic text-gold-lt">exceptional?</em>
@@ -75,7 +75,7 @@ export default async function BlogPage() {
           </div>
           <a
             href="/start-a-project"
-            className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200 flex-shrink-0"
+            className="text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200 flex-shrink-0"
           >
             Start a Project
           </a>

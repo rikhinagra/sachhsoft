@@ -73,8 +73,8 @@ export default function AboutPage() {
               <span className="block w-6 h-px bg-gold/40" />
             </div>
             <h1
-              className="font-serif font-light text-white leading-none tracking-[-0.03em] max-w-[860px]"
-              style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em] max-w-[860px]"
+              style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
             >
               We believe great
               <br />
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </div>
             <h2
               className="font-serif font-light text-ink leading-[1.1] tracking-[-0.025em] mb-8"
-              style={{ fontSize: "clamp(28px, 3.5vw, 48px)" }}
+              style={{ fontSize: "clamp(22px, 2.5vw, 38px)" }}
             >
               Built to fill a gap
               <br />
@@ -147,8 +147,8 @@ export default function AboutPage() {
               <span className="block w-6 h-px bg-gold/40" />
             </div>
             <h2
-              className="font-serif font-light text-ink leading-none tracking-[-0.025em]"
-              style={{ fontSize: "clamp(32px, 4.5vw, 60px)" }}
+              className="font-serif font-light text-ink leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(26px, 3.2vw, 48px)" }}
             >
               Principles that guide
               <br />
@@ -189,7 +189,7 @@ export default function AboutPage() {
             <StaggerItem key={s.label} className="bg-white text-center py-12 px-6 max-md:py-10">
               <CountUp
                 value={s.num}
-                className="font-serif font-light text-ink leading-none tracking-[-0.04em] mb-2 block"
+                className="font-serif font-light text-ink leading-[1.05] tracking-[-0.03em] mb-2 block"
                 style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
               />
               <div className="text-[11px] font-medium tracking-[0.14em] uppercase text-gold">
@@ -209,8 +209,8 @@ export default function AboutPage() {
               The Team
             </div>
             <h2
-              className="font-serif font-light text-ink leading-none tracking-[-0.025em]"
-              style={{ fontSize: "clamp(30px, 4vw, 56px)" }}
+              className="font-serif font-light text-ink leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(24px, 3vw, 44px)" }}
             >
               The people behind
               <br />
@@ -243,7 +243,7 @@ export default function AboutPage() {
                   <div className="w-8 h-px bg-gold mb-4" />
                   <div
                     className="font-serif font-normal text-ink tracking-[-0.01em] leading-tight mb-1.5"
-                    style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
+                    style={{ fontSize: "clamp(16px, 1.5vw, 22px)" }}
                   >
                     {member.name}
                   </div>
@@ -268,7 +268,7 @@ export default function AboutPage() {
           </span>
           <blockquote
             className="font-serif font-light italic text-ink leading-[1.5] tracking-[-0.01em]"
-            style={{ fontSize: "clamp(22px, 2.8vw, 34px)" }}
+            style={{ fontSize: "clamp(16px, 1.5vw, 22px)" }}
           >
             We don&apos;t measure success in lines of code delivered.
             We measure it in markets moved, companies scaled, and problems
@@ -287,8 +287,8 @@ export default function AboutPage() {
         <RevealWrapper className="max-w-[1280px] mx-auto flex items-center justify-between gap-12 max-lg:flex-col max-lg:items-start max-lg:gap-10">
           <div>
             <h2
-              className="font-serif font-light text-white leading-none tracking-[-0.025em]"
-              style={{ fontSize: "clamp(32px, 5vw, 68px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(26px, 3.5vw, 52px)" }}
             >
               Let&apos;s build something
               <br />
@@ -302,7 +302,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-4 items-end max-lg:items-start flex-shrink-0">
             <Link
               href="/start-a-project"
-              className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
+              className="text-[12px] font-medium tracking-[0.14em] uppercase text-white bg-gold px-12 py-[18px] no-underline whitespace-nowrap hover:bg-gold-lt hover:tracking-[0.18em] transition-all duration-200"
             >
               Start a Project
             </Link>

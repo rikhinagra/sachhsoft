@@ -97,8 +97,8 @@ export default function TermsPage() {
               <span className="block w-6 h-px bg-gold/40" />
             </div>
             <h1
-              className="font-serif font-light text-white leading-none tracking-[-0.03em]"
-              style={{ fontSize: "clamp(36px, 6vw, 80px)" }}
+              className="font-serif font-light text-white leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(28px, 4vw, 58px)" }}
             >
               Terms of Service
             </h1>

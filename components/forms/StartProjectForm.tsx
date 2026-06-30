@@ -28,7 +28,7 @@ function OptionCard({
       onClick={onSelect}
       className="relative text-left border p-6 transition-all duration-200 hover:-translate-y-0.5"
       style={{
-        borderColor: selected ? "#b8975a" : "#e4e1da",
+        borderColor: selected ? "#0E6CFB" : "#e4e1da",
         background: selected ? "rgba(184,151,90,0.08)" : "#ffffff",
       }}
     >
@@ -242,8 +242,8 @@ export default function StartProjectForm() {
                         <div
                           className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-semibold mb-2 transition-all duration-300 border"
                           style={{
-                            background: done ? "#b8975a" : active ? "#18160f" : "#ffffff",
-                            borderColor: done ? "#b8975a" : active ? "#18160f" : "#e4e1da",
+                            background: done ? "#0E6CFB" : active ? "#18160f" : "#ffffff",
+                            borderColor: done ? "#0E6CFB" : active ? "#18160f" : "#e4e1da",
                             color: done || active ? "#ffffff" : "#9b9690",
                           }}
                         >
