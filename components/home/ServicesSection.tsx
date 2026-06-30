@@ -16,12 +16,18 @@ const services = [
   },
   {
     idx: "03",
+    name: "Core Banking Modernization",
+    desc: "A highly targeted technical offering focusing strictly on the lifting, shifting, and data-mapping from old software to a new platform.",
+    href: "/services#core-banking",
+  },
+  {
+    idx: "04",
     name: "AI & Automation Integration",
     desc: "LLM integrations, RAG pipelines, agentic workflows, and intelligent automation embedded directly into your product.",
     href: "/services#ai-automation",
   },
   {
-    idx: "04",
+    idx: "05",
     name: "Teams & Talent Integration",
     desc: "Dedicated engineers who embed in your workflow, tools, and rhythm. No bloat, no ramp-up friction, just immediate velocity.",
     href: "/services#team-augmentation",
