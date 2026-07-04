@@ -1,108 +1,89 @@
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["ProfessionalService", "Organization"],
     name: "SACHHSOFT",
-    url: "https://sachhsoft.com",
-    logo: "https://sachhsoft.com/logo.png",
     description:
-      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Serving clients globally.",
+      "Bespoke software, app, and e-commerce development agency building custom HealthTech, FinTech, and AI-integrated platforms for enterprise teams, mid-size companies, and startups.",
+    url: "https://www.sachhsoft.com",
+    image: "https://sachhsoft.com/og-image.jpg",
     foundingDate: "2015",
-    numberOfEmployees: { "@type": "QuantitativeValue", value: 60 },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      url: "https://sachhsoft.com/start-a-project",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chicago",
+      addressRegion: "IL",
+      addressCountry: "US",
     },
+    areaServed: ["United States", "Worldwide"],
     sameAs: [
       "https://www.linkedin.com/company/sachhsoft/",
       "https://www.facebook.com/Sachhsoft/",
       "https://www.instagram.com/sachhsoft_usa/",
       "https://medium.com/@sachhsoft",
     ],
-  };
-}
-
-export function serviceSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "SACHHSOFT — Custom Software Development",
-    provider: { "@type": "Organization", name: "SACHHSOFT" },
-    serviceType: "Custom Software Development",
-    areaServed: "Worldwide",
+    knowsAbout: [
+      "App Development",
+      "E-Commerce Development",
+      "Web Development",
+      "HealthTech",
+      "FinTech",
+      "AI Integration",
+      "RAG Pipelines",
+      "Agentic Workflows",
+      "Cloud DevOps",
+      "React",
+      "Next.js",
+      "AWS",
+      "Azure",
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Software Development Services",
+      name: "SACHHSOFT Services",
       itemListElement: [
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Product Design & Development",
-            description:
-              "Web apps, mobile experiences, MVPs, and e-commerce — designed to convert and built to last.",
-          },
+          "@type": "Service",
+          name: "Web Development",
+          description:
+            "Custom web applications built with React and Next.js, from first sketch to production release.",
         },
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Cloud, DevOps & Infrastructure",
-            description:
-              "High-availability architectures on AWS and Azure. CI/CD pipelines and infrastructure that scales invisibly.",
-          },
+          "@type": "Service",
+          name: "App Development",
+          description:
+            "Native and cross-platform mobile app development for iOS and Android.",
         },
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "AI & Automation Integration",
-            description:
-              "LLM integrations, RAG pipelines, agentic workflows, and intelligent automation embedded in your product.",
-          },
+          "@type": "Service",
+          name: "E-commerce Development",
+          description:
+            "Headless storefronts, inventory systems, personalization engines, and omnichannel commerce.",
         },
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Teams & Talent Integration",
-            description:
-              "Dedicated engineers who embed in your workflow — no bloat, immediate velocity.",
-          },
+          "@type": "Service",
+          name: "Product Design & Development",
+          description:
+            "MVPs and full product builds, from first sketch to production release.",
+        },
+        {
+          "@type": "Service",
+          name: "Cloud, DevOps & Infrastructure",
+          description:
+            "High-availability architecture on AWS and Azure, CI/CD pipelines, and containerization.",
+        },
+        {
+          "@type": "Service",
+          name: "AI & Automation Integration",
+          description:
+            "LLM integrations, RAG pipelines, agentic workflows, and intelligent automation.",
+        },
+        {
+          "@type": "Service",
+          name: "Teams & Talent Integration",
+          description:
+            "Dedicated engineers who embed directly into your workflow and tools.",
         },
       ],
     },
-  };
-}
-
-export function localBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://sachhsoft.com/#localbusiness",
-    name: "SACHHSOFT",
-    url: "https://sachhsoft.com",
-    logo: "https://sachhsoft.com/logo.png",
-    image: "https://sachhsoft.com/og-image.jpg",
-    description:
-      "Bespoke software development company building custom digital products for enterprise teams, mid-size companies, and startup founders. Serving clients globally.",
-    telephone: "+1-848-468-8141",
-    email: "hello@sachhsoft.com",
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    sameAs: [
-      "https://www.linkedin.com/company/sachhsoft/",
-      "https://www.facebook.com/Sachhsoft/",
-      "https://www.instagram.com/sachhsoft_usa/",
-      "https://medium.com/@sachhsoft",
-    ],
-    priceRange: "$$$",
-    areaServed: "Worldwide",
   };
 }
 

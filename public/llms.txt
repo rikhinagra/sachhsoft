@@ -1,0 +1,36 @@
+# SACHHSOFT
+> SACHHSOFT builds custom software, mobile apps, and e-commerce platforms — HealthTech, FinTech, and AI-integrated — for enterprise teams, mid-size companies, and startup founders, from Chicago, delivered globally.
+
+SACHHSOFT is a bespoke software, app, and e-commerce development agency based in Chicago, operating since 2015 and serving clients across North America, Europe, the Middle East, and APAC. Every engineer ships with AI-augmented tooling (Copilot-assisted code, automated test generation, AI-driven architecture review), and the average client relationship lasts 2.5 years past launch.
+
+## Pages
+- [Home](https://www.sachhsoft.com/): Overview of SACHHSOFT's services, process, and impact.
+- [Services](https://www.sachhsoft.com/services): Product design & development, cloud/DevOps, AI & automation, team augmentation.
+- [Case Studies](https://www.sachhsoft.com/case-studies): Client work, including a HealthTech platform that scaled to 50K users in its first month.
+- [Industries](https://www.sachhsoft.com/industries): Healthcare, FinTech, E-Commerce, Legal, Real Estate, SaaS.
+- [About](https://www.sachhsoft.com/about): Company background and team.
+- [Blog](https://www.sachhsoft.com/blog): Articles on software development and engineering practices.
+- [Start a Project](https://www.sachhsoft.com/start-a-project): Contact and project inquiry form.
+
+## Services
+- Web Development: Custom web applications built with React and Next.js, from first sketch to production release.
+- App Development: Native and cross-platform mobile app development for iOS and Android.
+- E-commerce Development: Headless storefronts, inventory systems, personalization engines, and omnichannel commerce.
+- Product Design & Development: MVPs and full product builds, from first sketch to production release.
+- Cloud, DevOps & Infrastructure: High-availability architecture on AWS and Azure, CI/CD pipelines, and containerization.
+- AI & Automation Integration: LLM integrations, RAG pipelines, agentic workflows, and intelligent automation embedded into client products.
+- Teams & Talent Integration: Dedicated engineers who embed directly into a client's workflow and tools.
+
+## Industries Served
+- Healthcare & MedTech: HIPAA-compliant platforms, telehealth apps, EHR integrations, medical device software.
+- FinTech & Financial Services: Trading platforms, payment systems, compliance tools, wealth management applications.
+- E-Commerce & Retail: Headless storefronts, inventory systems, personalization engines, omnichannel experiences.
+- Legal & LegalTech: Case management, document automation, compliance platforms, legal workflow tools.
+- Real Estate & PropTech: Property marketplaces, CRM platforms, virtual tours, asset management software.
+- SaaS & B2B Software: Multi-tenant platforms, API-first architectures, billing integrations, enterprise dashboards.
+
+## Notable Work
+HealthTech Platform — designed and engineered a HIPAA-compliant telehealth platform from scratch (architecture, mobile apps, backend infrastructure) for an 8-person dedicated team in 14 weeks, reaching 50,000 users in its first month with 99.9% uptime SLA.
+
+## Location
+Chicago, IL, USA. Operating globally, with clients across North America, Europe, the Middle East, and APAC.
