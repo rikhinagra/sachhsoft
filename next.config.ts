@@ -16,20 +16,20 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // Scripts: self + inline (required by Next.js)
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-      // Styles: self + inline (Tailwind) + Google Fonts
-      "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
-      // Fonts: self + Google Fonts CDN
-      "font-src 'self' fonts.gstatic.com data:",
-      // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos)
-      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com",
+      // Scripts: self + inline (required by Next.js) + GTM + tools loaded via GTM (Clarity, Albacross, Poptin)
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.clarity.ms serve.albacross.com cdn.popt.in cdnjs.cloudflare.com",
+      // Styles: self + inline (Tailwind) + Google Fonts + Fontshare (Satoshi)
+      "style-src 'self' 'unsafe-inline' fonts.googleapis.com api.fontshare.com",
+      // Fonts: self + Google Fonts CDN + Fontshare CDN (css host + font file host)
+      "font-src 'self' fonts.gstatic.com api.fontshare.com cdn.fontshare.com data:",
+      // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos) + GTM/GA/Clarity/Albacross pixels
+      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com *.googletagmanager.com *.google-analytics.com *.clarity.ms *.google.com *.albacross.com c.bing.com",
       // Videos: self + Webflow CDN (hero video)
       "media-src 'self' cdn.prod.website-files.com",
-      // API calls: self + Google Apps Script (form submission)
-      "connect-src 'self' script.google.com script.googleusercontent.com",
-      // No iframes needed
-      "frame-src 'none'",
+      // API calls: self + Google Apps Script (form submission) + GTM/GA/Clarity/Albacross/Poptin
+      "connect-src 'self' script.google.com script.googleusercontent.com *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.doubleclick.net *.clarity.ms *.albacross.com *.popt.in *.google.com",
+      // GTM noscript fallback needs an iframe
+      "frame-src 'self' *.googletagmanager.com",
       // Block Flash and plugins completely
       "object-src 'none'",
       // Prevent base URL hijacking
