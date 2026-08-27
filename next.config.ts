@@ -18,16 +18,16 @@ const securityHeaders = [
       "default-src 'self'",
       // Scripts: self + inline (required by Next.js) + GTM + tools loaded via GTM (Clarity, Albacross, Poptin)
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.clarity.ms serve.albacross.com cdn.popt.in cdnjs.cloudflare.com",
-      // Styles: self + inline (Tailwind) + Google Fonts + Fontshare (Satoshi)
-      "style-src 'self' 'unsafe-inline' fonts.googleapis.com api.fontshare.com",
+      // Styles: self + inline (Tailwind) + Google Fonts + Fontshare (Satoshi) + Poptin's CDN
+      "style-src 'self' 'unsafe-inline' fonts.googleapis.com api.fontshare.com *.cloudfront.net",
       // Fonts: self + Google Fonts CDN + Fontshare CDN (css host + font file host)
       "font-src 'self' fonts.gstatic.com api.fontshare.com cdn.fontshare.com data:",
-      // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos) + GTM/GA/Clarity/Albacross pixels
-      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com *.googletagmanager.com *.google-analytics.com *.clarity.ms *.google.com *.albacross.com c.bing.com",
+      // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos + Poptin) + GTM/GA/Clarity/Albacross pixels
+      "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com *.googletagmanager.com *.google-analytics.com *.clarity.ms *.google.com *.google.co.in *.albacross.com c.bing.com",
       // Videos: self + Webflow CDN (hero video)
       "media-src 'self' cdn.prod.website-files.com",
-      // API calls: self + Google Apps Script (form submission) + GTM/GA/Clarity/Albacross/Poptin
-      "connect-src 'self' script.google.com script.googleusercontent.com *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.doubleclick.net *.clarity.ms *.albacross.com *.popt.in *.google.com",
+      // API calls: self + Google Apps Script (form submission) + GTM/GA/Clarity/Albacross/Poptin (CDN + API)
+      "connect-src 'self' script.google.com script.googleusercontent.com *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.doubleclick.net *.clarity.ms *.albacross.com *.popt.in *.google.com *.cloudfront.net",
       // GTM noscript fallback needs an iframe
       "frame-src 'self' *.googletagmanager.com",
       // Block Flash and plugins completely
