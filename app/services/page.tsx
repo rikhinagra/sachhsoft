@@ -74,7 +74,7 @@ const services = [
     icon: Landmark,
     name: "Core Banking Modernization",
     tagline: "A highly targeted technical offering focusing strictly on the lifting, shifting, and data-mapping from old software to a new platform.",
-    desc: "We migrate the most demanding workloads in global banking — COBOL, Adabas, z/OS, Unisys — to cloud-native architectures. Without downtime. Without rewrites. Without risk to your customers, your regulators, or your books.",
+    desc: "We migrate the most demanding workloads in global banking, including COBOL, Adabas, z/OS, and Unisys, to cloud-native architectures. Without downtime. Without rewrites. Without risk to your customers, your regulators, or your books.",
     deliverables: [
       "Mainframe-to-Cloud Migration",
       "COBOL Modernization",
