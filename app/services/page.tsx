@@ -4,6 +4,7 @@ import RevealWrapper from "@/components/ui/RevealWrapper";
 import {
   MonitorSmartphone,
   Cloud,
+  Landmark,
   BrainCircuit,
   Users,
   CheckCircle2,
@@ -68,8 +69,26 @@ const services = [
     bg: "bg-off",
   },
   {
-    id: "ai-automation",
+    id: "core-banking",
     idx: "03",
+    icon: Landmark,
+    name: "Core Banking Modernization",
+    tagline: "A highly targeted technical offering focusing strictly on the lifting, shifting, and data-mapping from old software to a new platform.",
+    desc: "We migrate the most demanding workloads in global banking — COBOL, Adabas, z/OS, Unisys — to cloud-native architectures. Without downtime. Without rewrites. Without risk to your customers, your regulators, or your books.",
+    deliverables: [
+      "Mainframe-to-Cloud Migration",
+      "COBOL Modernization",
+      "Data Modernization",
+      "AI-Powered Refactoring",
+      "Managed Modernization",
+      "Compliance & Assurance",
+    ],
+    tech: ["COBOL", "Java", "C#", ".NET", "PostgreSQL", "Oracle", "AWS", "Azure", "GCP", "Microservices", "SOC 2", "DORA", "Basel III"],
+    bg: "bg-white",
+  },
+  {
+    id: "ai-automation",
+    idx: "04",
     icon: BrainCircuit,
     name: "AI & Automation Integration",
     tagline: "LLMs, agents, and automation, built into the core of your product.",
@@ -84,11 +103,11 @@ const services = [
       "Workflow Automation & RPA",
     ],
     tech: ["OpenAI", "Anthropic Claude", "LangChain", "LlamaIndex", "Pinecone", "Python", "FastAPI", "pgvector", "Zapier"],
-    bg: "bg-white",
+    bg: "bg-off",
   },
   {
     id: "team-augmentation",
-    idx: "04",
+    idx: "05",
     icon: Users,
     name: "Teams & Talent Integration",
     tagline: "Senior engineers who embed in your team. No ramp-up, immediate velocity.",
@@ -103,7 +122,7 @@ const services = [
       "Fractional Engineering Leadership",
     ],
     tech: ["Any stack", "Jira", "Linear", "GitHub", "Slack", "Notion", "Figma", "Confluence", "Loom"],
-    bg: "bg-off",
+    bg: "bg-white",
   },
 ];
 
@@ -151,7 +170,7 @@ export default function ServicesPage() {
               <em className="italic text-gold-lt">Engineering.</em>
             </h1>
             <p className="text-[17px] font-light text-white/50 leading-[1.8] mt-8 max-w-[560px]">
-              Four core practices. One seamlessly accountable team. Everything
+              Five core practices. One seamlessly accountable team. Everything
               you need to design, build, scale, and maintain exceptional
               software, without the coordination overhead.
             </p>
