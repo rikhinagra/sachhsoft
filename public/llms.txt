@@ -6,6 +6,7 @@ SACHHSOFT is a bespoke software, app, and e-commerce development agency based in
 ## Pages
 - [Home](https://www.sachhsoft.com/): Overview of SACHHSOFT's services, process, and impact.
 - [Services](https://www.sachhsoft.com/services): Product design & development, cloud/DevOps, AI & automation, team augmentation.
+- [Legacy & Mainframe Modernization](https://www.sachhsoft.com/legacy-modernization): Connecting IBM Z, IBM i and Unisys systems to modern web, cloud and AI-assisted tools without a risky rewrite.
 - [Case Studies](https://www.sachhsoft.com/case-studies): Client work, including a HealthTech platform that scaled to 50K users in its first month.
 - [Industries](https://www.sachhsoft.com/industries): Healthcare, FinTech, E-Commerce, Legal, Real Estate, SaaS.
 - [About](https://www.sachhsoft.com/about): Company background and team.

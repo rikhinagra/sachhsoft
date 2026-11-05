@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Services", href: "/services" },
+  { label: "Legacy Modernization", href: "/legacy-modernization" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Industries", href: "/industries" },
   { label: "About", href: "/about" },
@@ -65,12 +66,12 @@ export default function Nav() {
       </Link>
 
       {/* Desktop nav — centered (lg = 1024px+, hide on tablet & mobile) */}
-      <ul className="hidden lg:flex gap-10 list-none absolute left-1/2 -translate-x-1/2">
+      <ul className="hidden lg:flex gap-6 xl:gap-10 list-none absolute left-1/2 -translate-x-1/2">
         {navLinks.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-[13px] font-normal tracking-[0.05em] no-underline transition-colors duration-200"
+              className="text-[13px] font-normal tracking-[0.05em] whitespace-nowrap no-underline transition-colors duration-200"
               style={{
                 color:
                   isDark || (scrolled && isHome)
