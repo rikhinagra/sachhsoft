@@ -20,8 +20,8 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.clarity.ms serve.albacross.com cdn.popt.in cdnjs.cloudflare.com",
       // Styles: self + inline (Tailwind) + Google Fonts + Fontshare (Satoshi) + Poptin's CDN + Poptin's own fonts/icons
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com api.fontshare.com *.cloudfront.net *.popt.in cdnjs.cloudflare.com",
-      // Fonts: self + Google Fonts CDN + Fontshare CDN (css host + font file host)
-      "font-src 'self' fonts.gstatic.com api.fontshare.com cdn.fontshare.com data:",
+      // Fonts: self + Google Fonts CDN + Fontshare CDN (css host + font file host) + Poptin's own font folder only (path-scoped on purpose, not all of S3)
+      "font-src 'self' fonts.gstatic.com api.fontshare.com cdn.fontshare.com https://s3.us-west-2.amazonaws.com/app.fonts.poptin.com/ data:",
       // Images: self + Cloudinary + Webflow CDN + CloudFront (case study logos + Poptin) + GTM/GA/Clarity/Albacross pixels + Poptin widget images
       "img-src 'self' blob: data: res.cloudinary.com cdn.prod.website-files.com *.cloudfront.net cdn-images-1.medium.com miro.medium.com *.googletagmanager.com *.google-analytics.com *.clarity.ms *.google.com *.google.co.in *.albacross.com c.bing.com *.popt.in",
       // Videos: self + Webflow CDN (hero video)
