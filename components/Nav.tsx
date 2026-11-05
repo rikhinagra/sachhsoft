@@ -65,8 +65,8 @@ export default function Nav() {
         />
       </Link>
 
-      {/* Desktop nav — centered (lg = 1024px+, hide on tablet & mobile) */}
-      <ul className="hidden lg:flex gap-6 xl:gap-10 list-none absolute left-1/2 -translate-x-1/2">
+      {/* Desktop nav — centered (1100px+, hamburger menu below that) */}
+      <ul className="hidden min-[1100px]:flex gap-6 xl:gap-10 list-none absolute left-1/2 -translate-x-1/2">
         {navLinks.map((link) => (
           <li key={link.href}>
             <Link
@@ -89,7 +89,7 @@ export default function Nav() {
       <div className="flex items-center gap-6">
         <Link
           href="/blog"
-          className="hidden lg:block text-[13px] font-normal tracking-[0.04em] no-underline transition-colors duration-200"
+          className="hidden min-[1100px]:block text-[13px] font-normal tracking-[0.04em] no-underline transition-colors duration-200"
           style={{
             color:
               isDark || (scrolled && isHome)
@@ -112,7 +112,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-[5px] p-1"
+          className="min-[1100px]:hidden flex flex-col gap-[5px] p-1"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -138,7 +138,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b border-[#e2dfd8] py-6 px-6 flex flex-col gap-4 lg:hidden shadow-lg">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-[#e2dfd8] py-6 px-6 flex flex-col gap-4 min-[1100px]:hidden shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.href}
