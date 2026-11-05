@@ -16,8 +16,9 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // Scripts: self + inline (required by Next.js) + GTM + tools loaded via GTM (Clarity, Albacross, Poptin)
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.clarity.ms serve.albacross.com cdn.popt.in cdnjs.cloudflare.com",
+      // Scripts: self + inline (required by Next.js) + GTM + tools loaded via GTM (Clarity, Albacross).
+      // Poptin's script host (cdn.popt.in) is intentionally NOT allowed: its popup is turned off per client request. To bring Poptin back, re-add cdn.popt.in here.
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.clarity.ms serve.albacross.com cdnjs.cloudflare.com",
       // Styles: self + inline (Tailwind) + Google Fonts + Fontshare (Satoshi) + Poptin's CDN + Poptin's own fonts/icons
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com api.fontshare.com *.cloudfront.net *.popt.in cdnjs.cloudflare.com",
       // Fonts: self + Google Fonts CDN + Fontshare CDN (css host + font file host) + Poptin's popup fonts and icon fonts (path-scoped on purpose, never whole hosts)
